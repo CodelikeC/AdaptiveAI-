@@ -21,13 +21,60 @@ Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, b�
 
 ```plaintext
 adaptive_ai_project/
-├── core/             # Bộ máy trí tuệ thích nghi
-├── modules/          # Các module sensing, preprocessing, protection, communication
-├── utils/            # Các tiện ích chung
-├── tests/            # Unit tests
-├── scripts/          # Scripts demo, train, evaluate
-├── config/           # Cấu hình hệ thống
-├── data/             # Dữ liệu (nếu có)
-├── docs/             # Tài liệu kỹ thuật
-├── LICENSE           # Giấy phép sử dụng
-└── README.md         # Tài liệu dự án
+│
+├── README.md            # Giới thiệu dự án, cách build và chạy
+├── LICENSE              # License (MIT, Apache, SafeAI License)
+├── .vscode/             # VSCode settings: tasks.json, launch.json
+│
+├── config/              # Các file cấu hình (YAML, JSON)
+│   ├── default.yaml
+│   └── adaptive_settings.yaml
+│
+├── core/                # Adaptive Core Engine
+│   ├── adaptation.h / adaptation.cpp    # Bộ não adaptivity
+│   ├── policy.h / policy.cpp            # Policy Controller
+│   ├── evolution.h / evolution.cpp      # Thuật toán tiến hóa
+│   ├── meta_learning.h / meta_learning.cpp # Meta-learning
+│
+├── modules/             # Các module chức năng
+│   ├── sensing/
+│   │   ├── network_sensor.h / network_sensor.cpp
+│   │   └── system_monitor.h / system_monitor.cpp
+│   │
+│   ├── preprocessing/
+│   │   ├── feature_extraction.h / feature_extraction.cpp
+│   │   └── data_cleaner.h / data_cleaner.cpp
+│   │
+│   ├── protection/
+│   │   ├── intrusion_detector.h / intrusion_detector.cpp
+│   │   └── self_defense.h / self_defense.cpp
+│   │
+│   └── communication/
+│       ├── rpc_client.h / rpc_client.cpp
+│       └── secure_channel.h / secure_channel.cpp
+│
+├── utils/               # Công cụ chung
+│   ├── logger.h / logger.cpp
+│   ├── metrics.h / metrics.cpp
+│   └── config_loader.h / config_loader.cpp
+│
+├── tests/               # Unit Tests
+│   ├── test_adaptation.cpp
+│   ├── test_feature_extraction.cpp
+│   └── test_intrusion_detector.cpp
+│
+├── scripts/             # Scripts hỗ trợ chạy demo
+│   ├── run_adaptive_core.cpp
+│   ├── demo_sensing.cpp
+│   └── test_communication.cpp
+│
+├── data/                # (Optional) Dữ liệu mẫu
+│   ├── raw/
+│   └── processed/
+│
+├── docs/                # Tài liệu kỹ thuật
+│   ├── architecture_diagram.png
+│   └── adaptive_ai_design.md
+│
+└── CMakeLists.txt       # Quản lý build project
+
