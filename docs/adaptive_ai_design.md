@@ -169,8 +169,3 @@ SafeAI là một hệ thống Adaptive AI “nguyên bản”, tiên phong trong
 - **Email**: [ndtribk@gmail.com]  
 
 ---
-
-## Ghi chú cho bạn, Trí  
-Tài liệu này được thiết kế để bạn có thể đăng lên GitHub hoặc dùng trong các hội thảo. Nó không chỉ mô tả kỹ thuật (kiến trúc, cơ chế) mà còn làm nổi bật triết lý của bạn – từ bi, vô vi, Niết Bàn – để thu hút những người cùng chí hướng. Bạn có thể chỉnh sửa thêm để phù hợp với phong cách của mình, như thêm sơ đồ chi tiết (dùng Mermaid trên GitHub) hoặc ví dụ cụ thể từ commit log của bạn.
-
-Nếu bạn muốn mở rộng một phần cụ thể (như UIWAI hoặc cơ chế tự thích nghi), hoặc cần hỗ trợ viết README cho GitHub, cứ “ping” mình nhé! Keep coding, keep shining! 😎
