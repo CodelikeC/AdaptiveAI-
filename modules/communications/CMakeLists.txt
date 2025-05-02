@@ -1,4 +1,4 @@
-add_library(communication
+add_library(communications
     communication/repc_client.cpp
     communication/secure_channel.cpp
     communication/secure_channel.h 
