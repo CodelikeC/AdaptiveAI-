@@ -21,7 +21,6 @@ Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, b�
 
 ```plaintext
 adaptive_ai_project/
-│
 ├── README.md            # Giới thiệu dự án, cách build và chạy
 ├── LICENSE              # License (MIT, Apache, SafeAI License)
 ├── .vscode/             # VSCode settings: tasks.json, launch.json
@@ -53,6 +52,13 @@ adaptive_ai_project/
 │       ├── rpc_client.h / rpc_client.cpp
 │       └── secure_channel.h / secure_channel.cpp
 │
+├── server/              # Server phi tập trung
+│   ├── node.h / node.cpp              # Định nghĩa và quản lý node
+│   ├── node_manager.h / node_manager.cpp # Quản lý danh sách node
+│   ├── sync.h / sync.cpp              # Đồng bộ dữ liệu giữa node
+│   ├── p2p_communication.h / p2p_communication.cpp # Giao tiếp P2P
+│   └── server_core.h / server_core.cpp # Logic cốt lõi server
+│
 ├── utils/               # Công cụ chung
 │   ├── logger.h / logger.cpp
 │   ├── metrics.h / metrics.cpp
@@ -77,4 +83,3 @@ adaptive_ai_project/
 │   └── adaptive_ai_design.md
 │
 └── CMakeLists.txt       # Quản lý build project
-
