@@ -15,6 +15,13 @@ public:
     double get_learning_rate() const;
     double get_adaptation_speed() const;
 
+    void contextual_awareness();
+    void stability_factor(); 
+
+    string feedback_quality(); 
+    void resource_efficiency();
+
+
 private:
     double compute_trend() const;
 
