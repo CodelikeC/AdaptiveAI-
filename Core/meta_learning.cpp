@@ -61,7 +61,15 @@ double MetaLearning::compute_trend() const
     }
     return trend / (recent_performance.size() - 1);
 }
+void MetaLearning :: set_learning_rate(double learning_rate)
+{
+    this -> learning_rate = learning_rate ; 
+}
 
+void MetaLearning :: set_adaption_speed(double adaptation_speed)
+{
+    this -> adaptation_speed = adaptation_speed;
+}
 double MetaLearning::get_learning_rate() const
 {
     return learning_rate;
@@ -70,6 +78,125 @@ double MetaLearning::get_learning_rate() const
 double MetaLearning::get_adaptation_speed() const
 {
     return adaptation_speed;
+}
+
+void MetaLearning :: contextual_awareness()
+{
+    cout <<"Contextual awareness" << endl; 
+    cout <<"--------------------" << endl; 
+
+    Logger::info("MetaLearning", "Analyzing contextual relevance of performance data...");
+
+    if (recent_performance.empty()) 
+    {
+        Logger::warn("MetaLearning", "No performance data available for context analysis.");
+        return;
+    }
+
+    double last = recent_performance.back();
+    if (last > 0.9) 
+    {
+        Logger::info("MetaLearning", "System is well-aligned with context.");
+    } 
+    else if (last < 0.5) 
+    {
+        Logger::warn("MetaLearning", "Performance mismatch with expected context. Adaptation needed.");
+    } 
+    else 
+    {
+        Logger::info("MetaLearning", "Moderate contextual alignment.");
+    }
+}
+
+void MetaLearning :: stability_factor()
+{
+    cout <<"Stability factor" << endl;
+    cout <<"----------------" << endl; 
+
+    Logger::info("MetaLearning", "Evaluating stability of performance...");
+
+    if (recent_performance.size() < 3) 
+    {
+        Logger::warn("MetaLearning", "Not enough data to evaluate stability.");
+        return;
+    }
+
+    double mean = 0.0;
+    for (auto val : recent_performance) mean += val;
+    mean /= recent_performance.size();
+
+    double variance = 0.0;
+    for (auto val : recent_performance) 
+    {
+        variance += (val - mean) * (val - mean);
+    }
+    variance /= recent_performance.size();
+
+    if (variance < 0.01) 
+    {
+        Logger::info("MetaLearning", "System is stable.");
+    } 
+    else 
+    {
+        Logger::warn("MetaLearning", "High performance variance detected.");
+    }
+    
+}
+
+void MetaLearning :: resource_efficiency()
+{
+    cout <<"Resource_efficiency" << endl; 
+    cout <<"-------------------" << endl; 
+
+    Logger::info("MetaLearning", "Estimating resource efficiency...");
+
+    // Giả định mô phỏng hiệu quả tài nguyên theo learning_rate và adaptation_speed
+    double efficiency = (1.0 / learning_rate) * (2.0 - adaptation_speed);
+
+    if (efficiency < 10.0) 
+    {
+        Logger::info("MetaLearning", "System is highly resource efficient.");
+    } 
+    else if (efficiency < 50.0) 
+    {
+        Logger::info("MetaLearning", "System is moderately efficient.");
+    } 
+    else 
+    {
+        Logger::warn("MetaLearning", "Resource usage is inefficient. Consider optimization.");
+    }
+}
+
+string MetaLearning :: feedback_quality()
+{
+    cout <<"Feedback quality" << endl; 
+    cout <<"----------------" << endl;
+    
+    Logger::info("MetaLearning", "Assessing feedback quality...");
+
+    if (recent_performance.size() < 2) 
+    {
+        Logger::warn("MetaLearning", "Insufficient data to evaluate feedback quality.");
+        return "UNKNOWN";
+    }
+
+    double trend = compute_trend();
+
+    if (std::abs(trend) < 0.001) 
+    {
+        Logger::info("MetaLearning", "Neutral feedback trend.");
+        return "NEUTRAL";
+    } 
+    else if (trend > 0.001) 
+    {
+        Logger::info("MetaLearning", "Positive feedback detected.");
+        return "POSITIVE";
+    } 
+    else 
+    {
+        Logger::warn("MetaLearning", "Negative feedback detected.");
+        return "NEGATIVE";
+    }
 }
 
 } // namespace adaptive_ai
