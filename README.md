@@ -28,7 +28,7 @@ Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, b�
 
 ---
 
-## 📂 Cấu trúc thư mục
+## 📂 Structure
 
 ```plaintext
 adaptive_ai_project/
