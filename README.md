@@ -4,8 +4,19 @@
 > **(Một nền tảng trí tuệ thích nghi thế hệ mới cho các hệ thống an toàn, tự tiến hóa và tự phòng thủ.)**
 
 ---
+## 📜 Project Objectives
 
-## 📜 Mục tiêu dự án
+Adaptive AI is a research and development project for intelligent systems that are capable of:
+- Automatically **adapt** to the operating environment.
+- **Evolve** strategies and behaviors based on real-world feedback.
+- **Detect** and **defend** against unusual changes or threats.
+- **Safely communicate** with systems like Safe AI.
+
+This project will serve as a precursor research branch, complementing the future Safe AI project.
+
+---
+
+## 📜 Mục tiêu dự án (in Vietnamese) 
 
 Adaptive AI là một dự án nghiên cứu và phát triển hệ thống trí tuệ có khả năng:
 - Tự động **thích nghi** theo môi trường hoạt động.
