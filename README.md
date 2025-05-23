@@ -32,18 +32,18 @@ Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, b�
 
 ```plaintext
 adaptive_ai_project/
-├── README.md            # Giới thiệu dự án, cách build và chạy
+├── README.md            # Giới thiệu dự án, cách build và chạy / Present a project, how to build and run 
 ├── LICENSE              # License (MIT, Apache, SafeAI License)
 ├── .vscode/             # VSCode settings: tasks.json, launch.json
 │
-├── config/              # Các file cấu hình (YAML, JSON)
+├── config/              # Các file cấu hình (YAML, JSON) / files Json, YAML
 │   ├── default.yaml
 │   └── adaptive_settings.yaml
 │
 ├── core/                # Adaptive Core Engine
-│   ├── adaptation.h / adaptation.cpp    # Bộ não adaptivity
+│   ├── adaptation.h / adaptation.cpp    # Bộ não adaptivity / Brain of adaptivity
 │   ├── policy.h / policy.cpp            # Policy Controller
-│   ├── evolution.h / evolution.cpp      # Thuật toán tiến hóa
+│   ├── evolution.h / evolution.cpp      # Thuật toán tiến hóa / AI can evolve itself by algorithms.
 │   ├── meta_learning.h / meta_learning.cpp # Meta-learning
 │
 ├── modules/             # Các module chức năng
@@ -63,14 +63,14 @@ adaptive_ai_project/
 │       ├── rpc_client.h / rpc_client.cpp
 │       └── secure_channel.h / secure_channel.cpp
 │
-├── server/              # Server phi tập trung
-│   ├── node.h / node.cpp              # Định nghĩa và quản lý node
-│   ├── node_manager.h / node_manager.cpp # Quản lý danh sách node
-│   ├── sync.h / sync.cpp              # Đồng bộ dữ liệu giữa node
-│   ├── p2p_communication.h / p2p_communication.cpp # Giao tiếp P2P
-│   └── server_core.h / server_core.cpp # Logic cốt lõi server
+├── server/              # Server phi tập trung / decentralized Server
+│   ├── node.h / node.cpp              # Định nghĩa và quản lý node / Define and control nodes
+│   ├── node_manager.h / node_manager.cpp # Quản lý danh sách node / manage Nodes
+│   ├── sync.h / sync.cpp              # Đồng bộ dữ liệu giữa node / Data Synchronization
+│   ├── p2p_communication.h / p2p_communication.cpp # Giao tiếp P2P / P2P communication
+│   └── server_core.h / server_core.cpp # Logic cốt lõi server / main logic of server module. 
 │
-├── utils/               # Công cụ chung
+├── utils/               # Công cụ chung / Common Tools.
 │   ├── logger.h / logger.cpp
 │   ├── metrics.h / metrics.cpp
 │   └── config_loader.h / config_loader.cpp
@@ -80,17 +80,17 @@ adaptive_ai_project/
 │   ├── test_feature_extraction.cpp
 │   └── test_intrusion_detector.cpp
 │
-├── scripts/             # Scripts hỗ trợ chạy demo
+├── scripts/             # Scripts hỗ trợ chạy demo / The scripts which helps running core, sensing, commmunication 
 │   ├── run_adaptive_core.cpp
 │   ├── demo_sensing.cpp
 │   └── test_communication.cpp
 │
-├── data/                # (Optional) Dữ liệu mẫu
+├── data/                # (Optional) Dữ liệu mẫu / Raw data, real time data. 
 │   ├── raw/
 │   └── processed/
 │
-├── docs/                # Tài liệu kỹ thuật
+├── docs/                # Tài liệu kỹ thuật / Technical Documents.
 │   ├── architecture_diagram.png
 │   └── adaptive_ai_design.md
 │
-└── CMakeLists.txt       # Quản lý build project
+└── CMakeLists.txt       # Quản lý build project / Cmake as usual for containing the project.
