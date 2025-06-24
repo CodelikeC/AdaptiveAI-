@@ -69,7 +69,14 @@ adaptive_ai_project/
 │   ├── sync.h / sync.cpp              # Đồng bộ dữ liệu giữa node / Data Synchronization
 │   ├── p2p_communication.h / p2p_communication.cpp # Giao tiếp P2P / P2P communication
 │   └── server_core.h / server_core.cpp # Logic cốt lõi server / main logic of server module. 
-│
+│___ plugin/
+|      |_ Lua/ 
+|      |_ scriptwithlua.cpp
+|      |_Update_new_logic.lua
+|      |_Check_the_logic.lua
+|      |_MakeDecision.lua
+|      |_Rollback.lua
+|      |_killswitchNewLogic.lua
 ├── utils/               # Công cụ chung / Common Tools.
 │   ├── logger.h / logger.cpp
 │   ├── metrics.h / metrics.cpp
