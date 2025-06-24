@@ -57,21 +57,7 @@ adaptive_ai_project/
 │   │
 │   ├── protection/
 │   │   ├── intrusion_detector.h / intrusion_detector.cpp
-│   │   └── self_defense.h / self_defense.cpp
-│   │
-│   └── communication/
-│       ├── rpc_client.h / rpc_client.cpp
-│       └── secure_channel.h / secure_channel.cpp
-│
-├── server/              # Server phi tập trung / decentralized Server
-│   ├── node.h / node.cpp              # Định nghĩa và quản lý node / Define and control nodes
-│   ├── node_manager.h / node_manager.cpp # Quản lý danh sách node / manage Nodes
-│   ├── sync.h / sync.cpp              # Đồng bộ dữ liệu giữa node / Data Synchronization
-│   ├── p2p_communication.h / p2p_communication.cpp # Giao tiếp P2P / P2P communication
-│   └── server_core.h / server_core.cpp # Logic cốt lõi server / main logic of server module. 
-│___ plugin/
-|      |_ Lua/ 
-|      |_ scriptwithlua.cpp
+│   │   └── self_defense.hh
 |      |_Update_new_logic.lua
 |      |_Check_the_logic.lua
 |      |_MakeDecision.lua
