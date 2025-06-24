@@ -67,10 +67,10 @@ adaptive_ai_project/
 |   |   |_killswitchNewLogic.lua
 |   |   |_ScriptswithLua.h/ScriptswithLua.cpp
 |   |_C++/
-|   |_sensing_plugin.h/sensing_plugin.cpp
-|   |_sensing_loader.h/sensing_loader.cpp
-|   |_plugin_interface.h/plugin_interface.cpp
-|   |_intrusion_plugin.cpp
+|   |   |_sensing_plugin.h/sensing_plugin.cpp
+|   |   |_sensing_loader.h/sensing_loader.cpp
+|   |   |_plugin_interface.h/plugin_interface.cpp
+|   |   |_intrusion_plugin.cpp
 ├── utils/               # Công cụ chung / Common Tools.
 │   ├── logger.h / logger.cpp
 │   ├── metrics.h / metrics.cpp
