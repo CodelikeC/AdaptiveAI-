@@ -65,6 +65,7 @@ adaptive_ai_project/
 |      |_MakeDecision.lua
 |      |_Rollback.lua
 |      |_killswitchNewLogic.lua
+|      |_ScriptswithLua.h/ScriptswithLua.cpp
 ├── utils/               # Công cụ chung / Common Tools.
 │   ├── logger.h / logger.cpp
 │   ├── metrics.h / metrics.cpp
