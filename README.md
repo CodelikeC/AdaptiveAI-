@@ -58,6 +58,8 @@ adaptive_ai_project/
 │   ├── protection/
 │   │   ├── intrusion_detector.h / intrusion_detector.cpp
 │   │   └── self_defense.hh
+|_ Plugin/
+|   |_lua/
 |      |_Update_new_logic.lua
 |      |_Check_the_logic.lua
 |      |_MakeDecision.lua
