@@ -7,13 +7,15 @@ using namespace std;
 #include "ScriptwithLua.h"
 #include <vector> 
 #include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h> 
 
 UpdateLogic :: UpdateLogic()
 {
     trust_score = 0; 
     update_score = 0 ; 
     logic = false; 
-    
+    initlua(); 
 }
 
 UpdateLogic :: ~UpdateLogic()
@@ -21,22 +23,27 @@ UpdateLogic :: ~UpdateLogic()
     closeLua(); 
 }
 
-lua_State *L = NULL;
-
 void UpdateLogic :: initlua(lua_State **L)
 {
-    // *L = luaL_newstate();
-    // luaL_openlibs(L);
+    L = luaL_newstate();
+    luaL_openlibs(L);
 }
 
 void UpdateLogic :: closeLua()
 {
-    if (L) lua_close(L);
+    if (L) 
+    lua_close(L);
+    L = nullptr;
 }
 
 bool UpdateLogic :: loadLuaScript(const string &scriptName)
 {   
-    
+    if (luaL_dofile(L, scriptName.c_str()) != LUA_OK) {
+        cerr << "Failed to load Lua script: " << scriptName << "\n";
+        cerr << "Lua error: " << lua_tostring(L, -1) << "\n";
+        return false;
+    }
+    return true;
 }
 
 bool UpdateLogic :: callluaFunction(const string &functionName)
