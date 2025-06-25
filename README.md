@@ -57,7 +57,7 @@ adaptive_ai_project/
 │   │
 │   ├── protection/
 │   │   ├── intrusion_detector.h / intrusion_detector.cpp
-│   │   └── self_defense.hh
+│   │   └── self_defense.h 
 |_ Plugin/
 |   |_lua/
 |   |   |_Update_new_logic.lua
@@ -71,6 +71,9 @@ adaptive_ai_project/
 |   |   |_sensing_loader.h/sensing_loader.cpp
 |   |   |_plugin_interface.h/plugin_interface.cpp
 |   |   |_intrusion_plugin.cpp
+|   |_Rust/
+|       |_.rs/.rs
+|       |_.rs/.rs
 ├── utils/               # Công cụ chung / Common Tools.
 │   ├── logger.h / logger.cpp
 │   ├── metrics.h / metrics.cpp
