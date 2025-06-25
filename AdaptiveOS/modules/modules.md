@@ -1,0 +1,1 @@
+- Triển khai các phần quan trọng cho dự án
