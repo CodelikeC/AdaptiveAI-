@@ -6,8 +6,7 @@ using namespace std;
 #include <chrono> 
 
 using namespace adaptive_ai ;
-
-// using packet_info = NetworkSensor::packet_info;
+using packet_info = NetworkSensor::packet_info;
 
 namespace adaptive_ai
 {
