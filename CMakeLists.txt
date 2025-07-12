@@ -1,73 +1,33 @@
-cmake_minimum_required(VERSION 3.16)
-project(AdaptiveAIProject)
+cmake_minimum_required(VERSION 3.31.5)
+project(adaptiveAI)
 
-# C++ standard
+# Thiết lập chuẩn C++
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-# Output directories
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+# Thêm thư mục source
+add_subdirectory(core)
+add_subdirectory(modules/sensor)
+add_subdirectory(modules/preprocessing)
+add_subdirectory(modules/protection)
+add_subdirectory(modules/communication)
 
-# Include tất cả các thư mục con
-include_directories(
-    ${PROJECT_SOURCE_DIR}/core
-    ${PROJECT_SOURCE_DIR}/modules/sensing
-    ${PROJECT_SOURCE_DIR}/modules/preprocessing
-    ${PROJECT_SOURCE_DIR}/modules/protection
-    ${PROJECT_SOURCE_DIR}/modules/communication
-    ${PROJECT_SOURCE_DIR}/utils
-)
+add_subdirectory(utils)
+add_subdirectory(scripts)
 
-# Source files
-file(GLOB_RECURSE CORE_SRC
-    "core/*.cpp"
-)
+# Thêm thư mục test
+add_subdirectory(tests)
 
-file(GLOB_RECURSE MODULES_SRC
-    "modules/sensing/*.cpp"
-    "modules/preprocessing/*.cpp"
-    "modules/protection/*.cpp"
-    "modules/communication/*.cpp"
-)
+# Tạo executable chính
+add_executable(core/adaption.cpp)
+target_link_libraries(core sensor preprocessing protection communication server utils)
 
-file(GLOB_RECURSE UTILS_SRC
-    "utils/*.cpp"
-)
+# Tạo executable cho các script
+add_executable(run_adaptive_core scripts/run_adaptive_core.cpp)
+target_link_libraries(run_adaptive_core core utils)
 
-file(GLOB_RECURSE SCRIPTS_SRC
-    "scripts/*.cpp"
-)
+add_executable(demo_sensing scripts/demo_sensing.cpp)
+target_link_libraries(demo_sensing sensing utils)
 
-# Targets
-
-# Build thư viện static từ core + modules + utils
-add_library(adaptive_ai_core STATIC
-    ${CORE_SRC}
-    ${MODULES_SRC}
-    ${UTILS_SRC}
-)
-
-# Các chương trình demo (link thư viện core)
-foreach(script ${SCRIPTS_SRC})
-    # Lấy tên file không có path và extension
-    get_filename_component(script_name ${script} NAME_WE)
-
-    add_executable(${script_name} ${script})
-    target_link_libraries(${script_name} adaptive_ai_core)
-endforeach()
-
-# Optional: Unit Tests
-enable_testing()
-
-file(GLOB TEST_SRC
-    "tests/*.cpp"
-)
-
-foreach(test_file ${TEST_SRC})
-    get_filename_component(test_name ${test_file} NAME_WE)
-
-    add_executable(${test_name} ${test_file})
-    target_link_libraries(${test_name} adaptive_ai_core)
-    add_test(NAME ${test_name} COMMAND ${test_name})
-endforeach()
+add_executable(test_communication scripts/test_communication.cpp)
+target_link_libraries(test_communication communication utils server)
