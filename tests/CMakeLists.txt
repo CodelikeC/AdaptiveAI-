@@ -1,8 +1,8 @@
 
-add_executable(test_adaption
-    test/test_adaption.cpp
-    tests/test_features_extraction.cpp
-    tests/test_intrusion.cpp
+add_executable(tests 
+    test_adaption.cpp
+    test_features_extraction.cpp
+    test_intrusion.cpp
     
 )
 target_link_libraries(test_adaption core utils communication)
