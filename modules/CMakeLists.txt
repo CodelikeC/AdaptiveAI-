@@ -1,6 +1,10 @@
-add_library(communication
-    communication/repc_client.cpp
-    communication/secure_channel.cpp
-)
-target_include_directories(communication PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(communication utils)
+cmake_minimum_required(VERSION 3.16)
+project(adaptiveAI)
+set (CMAKE_CXX_STANDARD 23)
+
+add_subdirectory(sensor)
+add_subdirectory(preprocessing)
+add_subdirectory(protection)
+add_subdirectory(communication)
+
+
