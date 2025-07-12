@@ -1,0 +1,16 @@
+core:
+  adaptation_engine: true
+  meta_learning: true
+  behavior_engine: true
+
+modules:
+  sensing: true
+  preprocessing: true
+  protection: true
+  communication: true
+  integration: true
+
+plugins:
+  enable_lua: true
+  enable_rust: true
+  enable_python: false

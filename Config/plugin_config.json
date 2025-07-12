@@ -1,0 +1,16 @@
+{
+  "lua_plugins": [
+    "Update_new_logic.lua",
+    "Check_the_logic.lua",
+    "MakeDecision.lua",
+    "Rollback.lua",
+    "threat_policy.lua"
+  ],
+  "rust_plugins": [
+    "behavior.rs",
+    "trust_guard.rs"
+  ],
+  "cpp_plugins": [
+    "intrusion_plugin.cpp"
+  ]
+}

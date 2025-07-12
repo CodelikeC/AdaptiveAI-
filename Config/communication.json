@@ -1,0 +1,7 @@
+{
+  "secure_channel": true,
+  "protocol": "websocket",
+  "endpoint": "ws://localhost:5000/adaptive_ai",
+  "ssl": false,
+  "retries": 3
+}

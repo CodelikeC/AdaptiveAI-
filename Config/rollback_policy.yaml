@@ -1,0 +1,5 @@
+enable_rollback: true
+max_rollback_depth: 3
+kill_switch_on_risk: true
+log_on_revert: true
+notify_admin: true

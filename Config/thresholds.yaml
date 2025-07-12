@@ -1,0 +1,12 @@
+trust_score:
+  min: 0.0
+  max: 1.0
+  danger_zone: 0.3
+
+anomaly_score:
+  zscore_threshold: 2.5
+  rolling_window: 5
+
+timeout:
+  plugin_execution: 3000  # ms
+  lua_script_timeout: 1500

@@ -1,0 +1,6 @@
+{
+  "live_adaptation_enabled": true,
+  "learning_mode": "meta",
+  "manual_override": false,
+  "debug_sensor_network": false
+}

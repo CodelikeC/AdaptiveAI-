@@ -1,0 +1,8 @@
+modules:
+  bayesian_optimizer: false
+  neural_plugin_loader: false
+  decentralized_sync: false
+
+notes:
+  - "Chỉ bật khi cần thử nghiệm"
+  - "Không đưa lên production"

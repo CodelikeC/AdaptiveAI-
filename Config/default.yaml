@@ -1,0 +1,7 @@
+version: 1.0.0
+project_name: AdaptiveAI
+author: trind
+language_support: [C++, Lua, Rust]
+debug_mode: true
+log_level: info
+enable_metrics: true

@@ -1,0 +1,7 @@
+os_type: Windows
+cpu_arch: x64
+ram_limit_mb: 4096
+user_profile:
+  user_id: ndtri
+  access_level: developer
+  allow_live_mode: false
