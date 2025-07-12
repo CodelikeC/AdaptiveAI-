@@ -1,4 +1,4 @@
-# AdaptiveAI-
+# AdaptiveAI
 
 > **A next-generation adaptive intelligence engine for secure, evolving, and self-defensive systems.**  
 > **(Một nền tảng trí tuệ thích nghi thế hệ mới cho các hệ thống an toàn, tự tiến hóa và tự phòng thủ.)**
@@ -32,69 +32,110 @@ Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, b�
 
 ```plaintext
 adaptive_ai_project/
-├── README.md            # Giới thiệu dự án, cách build và chạy / Present a project, how to build and run 
-├── LICENSE              # License (MIT, Apache, SafeAI License)
-├── .vscode/             # VSCode settings: tasks.json, launch.json
-│
-├── config/              # Các file cấu hình (YAML, JSON) / files Json, YAML
+├── README.md                  # Tổng quan, build, cách chạy, triết lý
+├── LICENSE                    # License dự án (MIT, Apache 2.0, SafeAI custom)
+├── .vscode/                   # VSCode settings (task, launch config)
+│   ├── tasks.json
+│   └── launch.json
+
+├── config/                    # Cấu hình JSON/YAML
 │   ├── default.yaml
 │   └── adaptive_settings.yaml
-│
-├── core/                # Adaptive Core Engine
-│   ├── adaptation.h / adaptation.cpp    # Bộ não adaptivity / Brain of adaptivity
-│   ├── policy.h / policy.cpp            # Policy Controller
-│   ├── evolution.h / evolution.cpp      # Thuật toán tiến hóa / AI can evolve itself by algorithms.
-│   ├── meta_learning.h / meta_learning.cpp # Meta-learning
-│
-├── modules/             # Các module chức năng
-│   ├── sensing/
-│   │   ├── network_sensor.h / network_sensor.cpp
-│   │   └── system_monitor.h / system_monitor.cpp
-│   │
-│   ├── preprocessing/
-│   │   ├── feature_extraction.h / feature_extraction.cpp
-│   │   └── data_cleaner.h / data_cleaner.cpp
-│   │
-│   ├── protection/
-│   │   ├── intrusion_detector.h / intrusion_detector.cpp
-│   │   └── self_defense.h 
-|_ Plugin/
-|   |_lua/
-|   |   |_Update_new_logic.lua
-|   |   |_Check_the_logic.lua
-|   |   |_MakeDecision.lua
-|   |   |_Rollback.lua
-|   |   |_killswitchNewLogic.lua
-|   |   |_ScriptswithLua.h/ScriptswithLua.cpp
-|   |_C++/
-|   |   |_sensing_plugin.h/sensing_plugin.cpp
-|   |   |_sensing_loader.h/sensing_loader.cpp
-|   |   |_plugin_interface.h/plugin_interface.cpp
-|   |   |_intrusion_plugin.cpp
-|   |_Rust/
-|       |_.rs/.rs
-|       |_.rs/.rs
-├── utils/               # Công cụ chung / Common Tools.
-│   ├── logger.h / logger.cpp
-│   ├── metrics.h / metrics.cpp
-│   └── config_loader.h / config_loader.cpp
-│
-├── tests/               # Unit Tests
-│   ├── test_adaptation.cpp
-│   ├── test_feature_extraction.cpp
-│   └── test_intrusion_detector.cpp
-│
-├── scripts/             # Scripts hỗ trợ chạy demo / The scripts which helps running core, sensing, commmunication 
+
+├── core/                      # Adaptive Core Engine
+│   ├── adaptation.h/.cpp              # Cốt lõi thích nghi
+│   ├── evolution.h/.cpp               # Cơ chế tiến hóa
+│   ├── policy.h/.cpp                  # Chính sách runtime
+│   ├── meta_learning.h/.cpp          # Học meta
+│   ├── state_model.h/.cpp            # Trạng thái hệ thống
+│   └── behavior_engine.h/.cpp        # Thực thi hành vi & logic
+
+├── modules/
+│   ├── sensing/                       # Cảm biến hệ thống
+│   │   ├── file_access_sensor.h/.cpp
+│   │   ├── registry_sensor.h/.cpp
+│   │   ├── network_sensor.h/.cpp
+│   │   ├── system_monitor.h/.cpp
+│   │   ├── user_behavior_sensor.h/.cpp
+│   │   └── outlier_sensor.h/.cpp
+
+│   ├── preprocessing/                # Xử lý dữ liệu
+│   │   ├── data_cleaner.h/.cpp
+│   │   ├── feature_extraction.h/.cpp
+│   │   ├── anomaly_pre_filter.h/.cpp
+│   │   ├── contextualizer.h/.cpp
+│   │   ├── data_labeler.h/.cpp
+│   │   ├── temporal_align.h/.cpp
+│   │   └── pre_feature_validator.h/.cpp
+
+│   ├── protection/                   # Phòng thủ & phản ứng
+│   │   ├── intrusion_detector.h/.cpp
+│   │   ├── self_defense.h/.cpp
+│   │   ├── threat_analyzer.h/.cpp
+│   │   ├── trust_guard.h/.cpp
+│   │   └── killswitch_monitor.h/.cpp
+
+│   ├── communication/               # Giao tiếp hệ thống
+│   │   ├── repc_client.h/.cpp
+│   │   ├── secure_channel.h/.cpp
+│   │   └── communication_manager.h/.cpp  (optional)
+
+│   └── integration/                 # Kết nối đa ngôn ngữ
+│       ├── plugin_interface.h/.cpp
+│       ├── sensing_plugin.h/.cpp
+│       ├── sensing_loader.h/.cpp
+│       ├── rust_bridge.rs
+│       └── python_stub.py
+
+├── plugin/
+│   ├── lua/
+│   │   ├── Update_new_logic.lua
+│   │   ├── Check_the_logic.lua
+│   │   ├── MakeDecision.lua
+│   │   ├── Rollback.lua
+│   │   ├── killswitchNewLogic.lua
+│   │   ├── threat_policy.lua
+│   │   └── ScriptsWithLua.h/.cpp
+
+│   ├── rust/
+│   │   ├── behavior.rs
+│   │   ├── detect_anomaly.rs
+│   │   ├── trust_guard.rs
+│   │   ├── secure_bridge.rs
+│   │   └── sync_update.rs
+
+│   └── python/ (optional future)
+
+├── utils/                           # Công cụ hỗ trợ nội bộ
+│   ├── logger.h/.cpp
+│   ├── metrics.h/.cpp
+│   ├── config_loader.h/.cpp
+│   └── memory_policy.h/.cpp         # (NEW: quản lý RAM, time, CPU)
+
+├── scripts/                         # Dùng chạy demo và mô phỏng
 │   ├── run_adaptive_core.cpp
 │   ├── demo_sensing.cpp
-│   └── test_communication.cpp
-│
-├── data/                # (Optional) Dữ liệu mẫu / Raw data, real time data. 
+│   ├── demo_preprocessing.cpp
+│   ├── demo_protection.cpp
+│   ├── test_communication.cpp
+│   └── simulate_packet_input.cpp    # (NEW)
+
+├── data/                            # Dữ liệu mẫu
 │   ├── raw/
 │   └── processed/
-│
-├── docs/                # Tài liệu kỹ thuật / Technical Documents.
+
+├── tests/                           # Unit test độc lập
+│   ├── test_adaptation.cpp
+│   ├── test_feature_extraction.cpp
+│   ├── test_intrusion_detector.cpp
+│   └── test_plugin_loader.cpp
+
+├── docs/                            # Tài liệu, biểu đồ, mô tả kiến trúc
 │   ├── architecture_diagram.png
-│   └── adaptive_ai_design.md
-│
-└── CMakeLists.txt       # Quản lý build project / Cmake as usual for containing the project.
+│   ├── adaptive_ai_design.md
+│   ├── philosophy_and_threat_model.md
+│   └── roadmap_2025_2026.pdf
+
+└── CMakeLists.txt                   # Build cấu trúc toàn bộ hệ thống
+
+```
