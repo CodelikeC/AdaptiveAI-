@@ -2,19 +2,40 @@ Adaptive AI License (SafeAI Edition)
 
 Copyright (c) 2025 [Nguyễn Đức Trí]
 
-Permission is hereby granted, free of charge, to use, copy, modify, and distribute
-this software and associated documentation files (the "Software"), under the following conditions:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to use,
+copy, modify, and distribute the Software, subject to the following conditions:
 
-1. Non-commercial use only. Any commercial usage requires explicit written consent.
-2. Forbidden usage for military, surveillance, espionage, or unethical activities.
-3. Any derivative works must be disclosed and shared back to the community.
-4. Attribution must be given to the original author in all distributions.
+1. **Non-commercial Use Only**  
+   This Software may only be used for non-commercial purposes.  
+   Any commercial usage, whether direct or indirect, requires explicit written consent from the author.
 
-...
+2. **Ethical Constraints**  
+   The Software may not be used, modified, or integrated into systems intended for:
+   - Military applications  
+   - Surveillance or espionage  
+   - Activities deemed unethical or harmful to human dignity and safety
 
-“Any use or modification of this architecture for commercial or academic purpose must be granted explicit permission from the author.”
+3. **Open Collaboration and Transparency**  
+   Any derivative work, improvement, or adaptation based on this Software:
+   - Must be disclosed openly  
+   - Must be shared back with the community under similar terms  
+   - Must retain this license and the attribution requirements
 
-// (C) Copyright 2025 by Tri ND - Adaptive AI Project.
-// Please contact author before redistribution or modification.
-// Project Manifesto: https://your-link
+4. **Attribution**  
+   Proper credit must be given to the original author “Tri ND” in any redistributions or public usage, including documentation and user interfaces.
+
+5. **Permission Clause**  
+   Any use or modification of this architecture for commercial or academic purposes **must** be granted explicit permission from the author.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+(C) Copyright 2025 by Tri ND - Adaptive AI Project  
+Please contact author before redistribution or modification.  
+Project Manifesto: https://your-link
+
+--- 
+[![License: Adaptive AI SafeAI Edition](https://img.shields.io/badge/license-SafeAI-lightgrey)](./LICENSE)
+
+
 
