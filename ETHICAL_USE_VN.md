@@ -4,7 +4,7 @@ Dưới đây là bản dịch tiếng Việt của tệp **`ETHICAL_USE.md`** �
 
 ## **Tuyên bố Sử dụng có Đạo đức cho Adaptive AI (Phiên bản SafeAI)**
 
-Mặc dù phần mềm này được phát hành theo **Giấy phép MIT** nhằm khuyến khích đổi mới và hợp tác mã nguồn mở, tác giả của dự án **kiên quyết phản đối việc sử dụng phần mềm này trong bất kỳ bối cảnh nào vi phạm các nguyên tắc của Trí tuệ nhân tạo lấy con người làm trung tâm và đạo đức.**
+Mặc dù phần mềm này được phát hành theo **Giấy phép Apache** nhằm khuyến khích đổi mới và hợp tác mã nguồn mở, tác giả của dự án **kiên quyết phản đối việc sử dụng phần mềm này trong bất kỳ bối cảnh nào vi phạm các nguyên tắc của Trí tuệ nhân tạo lấy con người làm trung tâm và đạo đức.**
 
 ### ❌ Cụ thể, chúng tôi phản đối việc sử dụng phần mềm này trong các mục đích sau:
 
