@@ -1,6 +1,6 @@
 # Ethical Use Statement for Adaptive AI (SafeAI Edition)
 
-Although this software is released under the permissive MIT License to encourage open innovation and collaboration, the authors strongly discourage its use in any context that violates the principles of ethical, human-centered Artificial Intelligence.
+Although this software is released under the permissive Apache-2.0 License to encourage open innovation and collaboration, the authors strongly discourage its use in any context that violates the principles of ethical, human-centered Artificial Intelligence.
 
 Specifically, we oppose the use of this software in:
 
