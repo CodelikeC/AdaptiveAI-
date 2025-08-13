@@ -1,0 +1,28 @@
+name: CI - Security File Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-security-md:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Verify SECURITY.md exists
+        run: |
+          if [ ! -f SECURITY.md ]; then
+            echo "❌ SECURITY.md file is missing!"
+            exit 1
+          else
+            echo "SECURITY.md found."
+          fi
+
+      - name: Display SECURITY.md contents
+        run: cat SECURITY.md
