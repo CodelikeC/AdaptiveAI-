@@ -1,5 +1,3 @@
----
-
 # SafeAI: Original Adaptive AI Design – Transparent, Safe, and Compassionate
 
 ## 1. Introduction
