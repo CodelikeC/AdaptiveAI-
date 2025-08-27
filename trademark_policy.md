@@ -1,76 +1,32 @@
-Adaptive AI™ Trademark Policy
+Adaptive AI — Trademark & International Protection Notice
+Trademark Statement
 
-The “Adaptive AI” name, logo, and related marks are trademarks of Nguyen Duc Tri (the “Owner”).
-While the source code of Adaptive AI is licensed under the Apache 2.0 License
-, the use of the Adaptive AI trademarks is subject to this policy.
+"Adaptive AI" and its associated logos, designs, and system architectures are claimed as trademarks of the author (Nguyễn Đức Trí) as of their first public use and publication on this repository.
 
-1. Permitted Use
+Any unauthorized use, reproduction, modification, or distribution of these marks in a manner that may cause confusion, misrepresentation, or false attribution is strictly prohibited under national and international trademark laws.
 
-You may use the Adaptive AI name or logo in the following ways without prior written permission:
+Jurisdiction & International Scope
 
-To accurately describe that your project is based on, built on, or forked from Adaptive AI (e.g. “This software is a fork of Adaptive AI”).
+This trademark claim is asserted under applicable Vietnamese Intellectual Property Law, and is further protected under international conventions and agreements, including but not limited to:
 
-In educational, academic, or research materials, provided that such use is not misleading.
+Paris Convention for the Protection of Industrial Property (1883)
 
-In non-commercial discussions, articles, or presentations.
+TRIPS Agreement (1995)
 
-2. Restricted Use
+Madrid Protocol (1989)
 
-You may not:
+The author reserves the right to extend formal protection through international trademark registration under the Madrid System administered by the WIPO (World Intellectual Property Organization).
 
-Use the name “Adaptive AI” or confusingly similar variations as the name of your own project, fork, product, or company, unless you have explicit permission.
+Enforcement
 
-Use the Adaptive AI logo or branding to imply endorsement, affiliation, or official status.
+Any use of "Adaptive AI" or its derivative marks without prior written authorization may result in civil and/or criminal liability.
 
-Register domain names, social media handles, or business names containing “Adaptive AI” in a way that could cause confusion.
+The author reserves all rights to enforce this trademark globally, including injunctions, monetary damages, and seizure of infringing materials.
 
-3. Proper Attribution
+GitHub repositories or derivative works that infringe upon this trademark are subject to takedown requests under the DMCA and relevant intellectual property frameworks.
 
-When referencing Adaptive AI:
+Limited Permitted Use
 
-Always use the name as “Adaptive AI” (capitalize properly).
+Use of the name "Adaptive AI" for academic reference, research citation, or fair commentary is permitted, provided it does not imply endorsement, ownership, or affiliation. Any commercial use requires explicit written permission from the author.
 
-Include attribution:
-
-“Adaptive AI is an open-source project by Nguyen Duc Tri.”
-
-4. Forks & Derivative Works
-
-You may fork the Adaptive AI code under the terms of the Apache 2.0 License.
-
-However, you must use a different name and logo for your forked project.
-
-Example (✅ Allowed): “XYZ Engine – A fork of Adaptive AI”
-
-Example (❌ Not Allowed): “Adaptive AI Plus”, “Adaptive AI Pro”
-
-5. Requesting Permission
-
-If you want to use “Adaptive AI” in a way that is not covered above, please contact:
-
-Nguyen Duc Tri
-📧 [ndtribk@gmail.com
-]
-📄 [www.linkedin.com/in/nguyễnđứctrí]
-
-6. Enforcement
-
-Misuse of the Adaptive AI trademarks may result in:
-
-Public notice of violation.
-
-Request to rename or rebrand the infringing project.
-
-Potential legal action if misuse is intentional and harmful.
-
-7. Summary
-
-✅ Use “Adaptive AI” to reference the original project.
-
-✅ Say your project is “based on Adaptive AI.”
-
-❌ Don’t name your fork “Adaptive AI.”
-
-❌ Don’t use the logo to imply endorsement.
-
-🔒 This policy ensures the code stays open, while the brand stays protected.
+📌 Note: This public trademark notice serves as prima facie evidence of authorship and first use in commerce/publication, which is a critical factor in global trademark disputes.
