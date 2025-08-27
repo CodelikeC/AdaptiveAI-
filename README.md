@@ -141,3 +141,38 @@ adaptive_ai_project/
 └── CMakeLists.txt                   # Build cấu trúc toàn bộ hệ thống
 
 ```
+
+# Run 
+``` bash 
+g++ - o <filename>.cpp <filename>
+```
+# Block Badges
+<p align="center">
+  <!-- License -->
+  <a href="https://opensource.org/licenses/Apache-2.0">
+    <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License" />
+  </a>
+  <!-- Build -->
+  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/actions">
+    <img src="https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/cmake.yml?branch=main" alt="Build Status" />
+  </a>
+  <!-- Issues -->
+  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/issues">
+    <img src="https://img.shields.io/github/issues/YOUR_USERNAME/YOUR_REPO" alt="Issues" />
+  </a>
+  <!-- Pull Requests -->
+  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/pulls">
+    <img src="https://img.shields.io/github/issues-pr/YOUR_USERNAME/YOUR_REPO" alt="Pull Requests" />
+  </a>
+  <!-- Stars -->
+  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/stargazers">
+    <img src="https://img.shields.io/github/stars/YOUR_USERNAME/YOUR_REPO?style=social" alt="Stars" />
+  </a>
+  <!-- Language -->
+  <img src="https://img.shields.io/badge/language-C++23 | Rust | Lua-orange" alt="Languages" />
+  <!-- Docs -->
+  <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/wiki">
+    <img src="https://img.shields.io/badge/docs-available-brightgreen" alt="Documentation" />
+  </a>
+</p>
+
