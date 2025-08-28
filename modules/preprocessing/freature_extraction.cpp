@@ -1,40 +1,51 @@
+/*NEW VERSION*/
 #include "feature_extraction.h"
 #include <functional>
 #include <cmath>
 #include <sstream>
+#include <limits> 
+#include <algorithm> 
 
-namespace feature {
+std::vector<double> extract_numeric_features(const std::vector<double>& raw_values) {
+    if (raw_values.empty()) return {};
 
-std::vector<double> FeatureExtractor::extract_numeric_features(const std::vector<double>& data) {
-    std::vector<double> result;
-    for (double val : data) {
-        result.push_back(val);  // Tùy logic: có thể thêm z-score, log(val), val^2, v.v.
+    double min_val = *std::min_element(raw_values.begin(), raw_values.end());
+    double max_val = *std::max_element(raw_values.begin(), raw_values.end());
+
+    std::vector<double> normalized;
+    normalized.reserve(raw_values.size());
+
+    if (std::fabs(max_val - min_val) < std::numeric_limits<double>::epsilon()) {
+        // Nếu toàn bộ giá trị giống nhau, cho ra 0.5
+        normalized.assign(raw_values.size(), 0.5);
+        return normalized;
     }
-    return result;
-}
 
-std::vector<double> FeatureExtractor::extract_key_value_features(const std::unordered_map<std::string, std::string>& data) {
-    std::vector<double> features;
-
-    for (const auto& [key, value] : data) {
-        double encoded = encode_string_to_number(value);
-        features.push_back(encoded);
+    for (auto v : raw_values) {
+        double norm = (v - min_val) / (max_val - min_val);
+        normalized.push_back(norm);
     }
-
-    return features;
+    return normalized;
 }
 
-double FeatureExtractor::encode_string_to_number(const std::string& value) {
-    // Tạm thời: hash string (thay bằng encode one-hot, binary embedding hoặc BERT sau)
-    // return static_cast<double>(hash_string(value) % 10000) / 10000.0;
+std::map<std::string, double> extract_key_value_features(const std::map<std::string, std::string>& raw_data) {
     std::hash<std::string> hasher;
-    auto raw_hash = static_cast<double>(hasher(value) & 0x7FFFFFFF); // Giữ dương
-    return raw_hash / static_cast<double>(0x7FFFFFFF); // Normalize về [0,1]
+    std::map<std::string, double> encoded;
+
+    for (const auto& [key, value] : raw_data) {
+        auto raw_hash = static_cast<double>(hasher(value) & 0x7FFFFFFF);
+        double norm = raw_hash / static_cast<double>(0x7FFFFFFF);
+        encoded[key] = norm;
+    }
+    return encoded;
 }
 
-double FeatureExtractor::hash_string(const std::string& input) {
-    std::hash<std::string> hasher;
-    return static_cast<double>(hasher(input));
+FeatureSet extract_features(const std::vector<double>& numeric_data,
+                            const std::map<std::string, std::string>& kv_data) {
+    FeatureSet fset;
+    fset.numeric = extract_numeric_features(numeric_data);
+    fset.key_value = extract_key_value_features(kv_data);
+    return fset;
 }
 
-} // namespace feature
+
