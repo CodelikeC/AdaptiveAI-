@@ -188,10 +188,10 @@ int main() {
 - Chạy: `./build/test_protection`.
 
 ### 4. **Tại Sao Cách Này Bền Vững Theo First Principles**
-- **Tự chủ**: Không phụ thuộc vào framework, bạn kiểm soát hoàn toàn logic test, từ in ra kết quả đến so sánh thủ công.
+- **Tự chủ**: Không phụ thuộc vào framework, kiểm soát hoàn toàn logic test, từ in ra kết quả đến so sánh thủ công.
 - **Modularity**: Modules giữ code tách biệt, dễ mở rộng khi thêm module mới.
 - **Hiệu quả**: Chỉ import những gì cần, giảm overhead so với include toàn bộ.
-- **Kiểm soát vi mô**: Bạn có thể thêm các kiểm tra thủ công (như if-else) để đảm bảo mỗi hàm hoạt động đúng, thay vì dựa vào assertion của framework.
+- **Kiểm soát vi mô**: Có thể thêm các kiểm tra thủ công (như if-else) để đảm bảo mỗi hàm hoạt động đúng, thay vì dựa vào assertion của framework.
 
 ### 5. **Mở Rộng và Tùy Chỉnh**
 - Nếu bạn muốn test sâu hơn (ví dụ: lặp qua nhiều signal), thêm vòng lặp trong `main()`.
