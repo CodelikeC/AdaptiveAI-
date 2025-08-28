@@ -93,7 +93,7 @@
 - Tương tự, tạo các module khác (`KillSwitchMonitor`, `SelfDefense`, `TrustGuard`) với interface và implementation riêng.
 
 ### 2. **File Test Thủ Công**
-Thay vì dùng framework, bạn có thể viết một file test `test_protection.cpp` để gọi và kiểm tra các hàm thủ công, dựa trên logic đầu tiên. Đây là cách tổ chức:
+Thay vì dùng framework, ta có thể viết một file test `test_protection.cpp` để gọi và kiểm tra các hàm thủ công, dựa trên logic đầu tiên. Đây là cách tổ chức:
 
 ```cpp
 import <iostream>;
@@ -194,6 +194,6 @@ int main() {
 - **Kiểm soát vi mô**: Có thể thêm các kiểm tra thủ công (như if-else) để đảm bảo mỗi hàm hoạt động đúng, thay vì dựa vào assertion của framework.
 
 ### 5. **Mở Rộng và Tùy Chỉnh**
-- Nếu bạn muốn test sâu hơn (ví dụ: lặp qua nhiều signal), thêm vòng lặp trong `main()`.
+- Nếu muốn test sâu hơn (ví dụ: lặp qua nhiều signal), thêm vòng lặp trong `main()`.
 - Nếu các module khác (KillSwitchMonitor, v.v.) chưa có code, hãy định nghĩa ít nhất một hàm public để gọi trong test.
-- Để tăng độ tin cậy, bạn có thể thêm log file hoặc biến đếm lỗi thủ công.
+- Để tăng độ tin cậy, có thể thêm log file hoặc biến đếm lỗi thủ công.
