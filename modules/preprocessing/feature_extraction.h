@@ -1,22 +1,24 @@
-#pragma once
+
+#ifndef FEATURE_EXTRACTION_H 
+#define FEATURE_EXTRACTION_H
 
 #include <string>
 #include <vector>
-#include <unordered_map>
+#include <map>
 
-namespace feature {
+std::vector<double> extract_numeric_features(const std::vector<double>& raw_values);
 
-class FeatureExtractor {
-public:
-    // Dành cho dữ liệu số
-    std::vector<double> extract_numeric_features(const std::vector<double>& data);
+// Trả về map<string,double> encode key-value pairs thành giá trị [0,1]
+std::map<std::string, double> extract_key_value_features(const std::map<std::string, std::string>& raw_data);
 
-    // Dành cho dữ liệu dạng key-value
-    std::vector<double> extract_key_value_features(const std::unordered_map<std::string, std::string>& data);
-
-private:
-    double encode_string_to_number(const std::string& value);
-    double hash_string(const std::string& input);
+// Kết hợp cả numeric + key-value
+struct FeatureSet {
+    std::vector<double> numeric;
+    std::map<std::string, double> key_value;
 };
 
-} // namespace feature
+FeatureSet extract_features(const std::vector<double>& numeric_data,
+                            const std::map<std::string, std::string>& kv_data);
+
+#endif // FEATURE_EXTRACTION_H
+
