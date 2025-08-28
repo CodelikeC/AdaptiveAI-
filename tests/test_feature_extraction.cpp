@@ -1,13 +1,9 @@
 #include <iostream>
 using namespace std ; 
 
-#include <string> 
+#include <cassert> 
 #include "../modules/preprocessing/feature_extraction.h"
 #include "../modules/preprocessing/freature_extraction.cpp"
-
-#include <algorithm> 
-
-using namespace feature; 
 
 int main ()
 {
@@ -15,33 +11,40 @@ int main ()
     cout <<"==Test feature extraction==" << endl; 
     cout <<"===========================" << endl; 
 
-    // Tao mot object cho test feature_extraction.cpp
-    FeatureExtractor feature; 
-    
-    // Du lieu gia lap sau khi clean .. // 
-    map<string, string> cleaned_data = {
-        {"username", "alice"},
-        {"ip_address", "192.168.1.1"},
-        {"action", "login"},
-        {"resource", "/admin"},
-        {"status", "success"}
+   // Test 1: numeric features
+    std::vector<double> nums = {10.0, 20.0, 30.0};
+    auto norm = extract_numeric_features(nums);
+    assert(norm.size() == nums.size());
+    assert(norm.front() == 0.0);
+    assert(norm.back() == 1.0);
+    std::cout << "[PASS] Numeric normalization test\n";
+
+    // Test 2: identical numeric values
+    std::vector<double> same = {5.0, 5.0, 5.0};
+    auto norm_same = extract_numeric_features(same);
+    for (auto v : norm_same) assert(v == 0.5);
+    std::cout << "[PASS] Identical numeric values test\n";
+
+    // Test 3: key-value features
+    std::map<std::string,std::string> kv = {
+        {"user", "alice"},
+        {"role", "admin"}
     };
-
-    // goi ham extract_features .. 
-    auto features = feature.extract_features(cleaned_data); 
-
-    // iN ra ket qua ..// 
-    for (const auto &[key,value] : features)
-    {
-        cout <<"Feature:" << key <<"==>" << value << endl;
+    auto kv_features = extract_key_value_features(kv);
+    assert(kv_features.size() == kv.size());
+    for (auto& [k,v] : kv_features) {
+        assert(v >= 0.0 && v <= 1.0);
     }
+    std::cout << "[PASS] Key-value encoding test\n";
 
-    // Kiem tra don gian ..// 
-    if (features.size() != cleaned_data.size())
-    {
-        cerr <<"Feature size mismatch" <<endl; 
-        return 1; 
-    }
+    // Test 4: combined features
+    auto fset = extract_features(nums, kv);
+    assert(fset.numeric.size() == nums.size());
+    assert(fset.key_value.size() == kv.size());
+    std::cout << "[PASS] Combined feature set test\n";
+
+    std::cout << "All tests passed!\n";
 
     return 0; 
 }
+
