@@ -1,3 +1,4 @@
+#pragma once 
 #include <iostream> 
 using namespace std; 
 #include <string> 
@@ -28,3 +29,4 @@ namespace adaptive_ai
 
     };
 } // namespace adaptive_ai .. // 
+
