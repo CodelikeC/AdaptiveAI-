@@ -1,12 +1,15 @@
-#ifndef killswitch_monitor_h 
-#define killswitch_monitor_h 
+#pragma once 
 
-#include <iostream>
+#include <iostream> 
 #include <string> 
-#include <cmath>
-#include <lua.h>
+#include <cmath> 
+#include <unordered_map> 
 
-#include <unordered_map>
+// forward declare lua_State to avoid including Lua Headers in the public header...// 
+extern "C"
+{
+    typedef struct lua_State lua_State;
+}
 
 using namespace std; 
 
@@ -28,11 +31,12 @@ class KillSwitchMonitor
     string queryActionPolicy(float score, const string &source); 
 
     private: 
-    lua_State *L; 
+    lua_State *L = nullptr; 
     const float killThreshold =0.85f; // nguong de kich hoat kill switch..//
-
+    
     void initLua(); 
     void closeLua(); 
 }; 
+
 
 #endif 
