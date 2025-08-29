@@ -1,53 +1,29 @@
-#include <iostream> 
-using namespace std ; 
-#include <string> 
-
 #include "intrusion_detector.h"
-#include <algorithm>
 
+namespace adaptive_ai {
 
-namespace adaptive_ai 
-{
+IntrusionDetector::IntrusionDetector(ThreatAnalyzer& analyzer,
+                                     TrustGuard& trustGuard,
+                                     SelfDefense& selfDefense)
+    : analyzer_(analyzer), trustGuard_(trustGuard), selfDefense_(selfDefense) {}
 
-IntrusionDetector::IntrusionDetector() 
-{
-    // Mẫu xâm nhập được huấn luyện thủ công hoặc học qua dữ liệu
-    known_patterns = 
-    { 
-    "suspicious_exec", 
-    "unauthorized_access", 
-    "port_scan", 
-    "malicious_payload" 
-    };
-}
+DetectionResult IntrusionDetector::processSignal(const ThreatSignal& signal,
+                                                 const std::string& module) {
+    analyzer_.ingestSignal(signal);
 
-bool IntrusionDetector::detect_intrusion(const std::map<std::string, std::string>& input_data) 
-{
-    detected_patterns.clear();
-    for (const auto& [key, value] : input_data) 
-    {
-        if (matches_known_pattern(value)) 
-        {
-            detected_patterns.push_back(value);
-        }
+    ThreatLevel level = analyzer_.analyzeThreat();
+
+    // Update trust score: lower trust if signal is severe
+    int delta = (signal.serverityScore > 0.7f) ? -10 : +1;
+    trustGuard_.updateTrustScore(module, delta);
+
+    std::vector<std::string> defenseActions;
+    if (level == ThreatLevel::HIGH || level == ThreatLevel::CRITICAL) {
+        defenseActions = selfDefense_.conunter_instrusion({module});
     }
-    return !detected_patterns.empty();
-}
 
-bool IntrusionDetector::matches_known_pattern(const std::string& data) 
-{
-    return std::any_of(known_patterns.begin(), known_patterns.end(), 
-    [&](const std::string& pattern) 
-    {
-        return data.find(pattern) 
-        != std::string::npos;
-    });
-}
-
-const std::vector<std::string>& IntrusionDetector
-::get_detected_patterns() const 
-{
-    return detected_patterns;
+    int trust = trustGuard_.getTrustScore(module);
+    return {level, defenseActions, trust};
 }
 
 } // namespace adaptive_ai
