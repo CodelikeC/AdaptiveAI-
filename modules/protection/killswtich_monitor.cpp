@@ -1,86 +1,125 @@
 #include "killswitch_monitor.h"
 #include <iostream>
-#include <lauxlib.h>
-#include <lualib.h>
-#include <string> 
-using namespace std; 
 
-KillSwitchMonitor :: KillSwitchMonitor()
+extern "C" 
 {
-    initLua(); 
+    #include <lua.h>
+    #include <lauxlib.h>
+    #include <lualib.h>
 }
 
-KillSwitchMonitor :: ~KillSwitchMonitor()
-{
-    shutdown(); 
+#include <string>
+
+using namespace std;
+
+KillSwitchMonitor::KillSwitchMonitor() {
+    initLua();
 }
 
-void KillSwitchMonitor :: initLua()
-{
-    L = luaL_newstate(); 
-    luaL_openlibs(L); 
-    loadLuaScript("Plugin/lua/killswitchNewLogic.lua"); 
+KillSwitchMonitor::~KillSwitchMonitor() {
+    shutdown();
 }
 
-void KillSwitchMonitor :: shutdown()
-{
-    closeLua(); 
+void KillSwitchMonitor::initLua() {
+    if (!L) {
+        L = luaL_newstate();
+        if (!L) {
+            cout << "[ERROR] Failed to create new Lua state\n";
+            return;
+        }
+        luaL_openlibs(L);
+        // only attempt to load if state is valid
+        loadLuaScript("Plugin/lua/killswitchNewLogic.lua");
+    }
 }
 
-void KillSwitchMonitor :: closeLua()
-{
-    if (L)
-    {
+void KillSwitchMonitor::shutdown() {
+    closeLua();
+}
+
+void KillSwitchMonitor::closeLua() {
+    if (L) {
         lua_close(L);
         L = nullptr;
     }
 }
 
-bool KillSwitchMonitor :: loadLuaScript(const string &filename)
-{
-    if (luaL_dofile(L, filename.c_str())!= LUA_OK)
-    {
-        cout <<"[LUA error]:" << lua_tostring(L, -1) << endl ; 
-        lua_pop(L, 1) ;
-        return false; 
+void KillSwitchMonitor::initialize() {
+    if (!L) {
+        initLua(); // ensure state is created
     }
-    return true; 
 }
 
-bool KillSwitchMonitor :: monitorLogicIntegrity(const string &logicname, float threatScore)
+bool KillSwitchMonitor::loadLuaScript(const string &filename) 
 {
-    string decision = queryActionPolicy(threatScore, logicname ); 
-    if (decision == "KILL")
+    if (!L) 
     {
-        cout <<"KIll switch Abort Logic:" << logicname << endl;
-        return true ; 
+        cout << "[LUA error]: Lua state is null\n";
+        return false;
     }
-    else if (decision == "ROLLBACK")
+
+    if (luaL_dofile(L, filename.c_str()) != LUA_OK) 
     {
-        cout <<"Killswitch - Trigger rollback for:" << logicname << endl; 
-        return false; 
+        const char* msg = lua_tostring(L, -1);
+        cout << "[LUA error]:" << (msg ? msg : "unknown") << endl;
+        lua_pop(L, 1);
+        return false;
     }
-    return false; 
+    
+    return true;
 }
 
-bool KillSwitchMonitor :: evaluateAbortCondition(float threatScore, const string &source)
+bool KillSwitchMonitor :: monitorLogicIntergrity(const string &logicname, float threatScore)
 {
-    return (threatScore >= killThreshold);
+    string decision = queryActionPolicy(threatScore, logicname);
+    if (decision == "KILL") 
+    {
+        cout << "Kill switch Abort Logic: " << logicname << endl;
+        return true;
+    } 
+    else if (decision == "ROLLBACK") 
+    {
+        cout << "Killswitch - Trigger rollback for: " << logicname << endl;
+        return false;
+    }
+    return false;
 }
 
-string KillSwitchMonitor :: queryActionPolicy(float score, const string &source)
+bool KillSwitchMonitor::evaluateAbortCondition(float threatScore, const string &source) 
 {
-    lua_getglobal(L, "Evaluate killaction"); 
-    lua_pushnumber(L, score);
-    lua_pushstring(L, source.c_str()); 
+    return (threatScore >= killThresHold);
+}
 
-    if (lua_pcall(L, 2,1, 0) != LUA_OK)
+string KillSwitchMonitor::queryActionPolicy(float score, const string &source) {
+    if (!L) 
     {
-        cout <<"Lua error - Failed to call evaluate" << endl; 
-        lua_pop(L, 1); 
+        cout << "Lua state is null in queryActionPolicy\n";
         return "SAFE";
     }
-    string result = lua_tostring(L, -1); 
-    lua_pop(L, 1); 
-    return result; 
+
+    // IMPORTANT: the function name in Lua cannot contain spaces.
+    // ensure your Lua script defines e.g. function evaluate_killaction(score, source) ... end
+    lua_getglobal(L, "evaluate_killaction"); // use a valid identifier
+    if (!lua_isfunction(L, -1)) 
+    {
+        cout << "Lua function 'evaluate_killaction' not found\n";
+        lua_pop(L, 1);
+        return "SAFE";
+    }
+
+    lua_pushnumber(L, score);
+    lua_pushstring(L, source.c_str());
+
+    if (lua_pcall(L, 2, 1, 0) != LUA_OK) 
+    {
+        const char* msg = lua_tostring(L, -1);
+        cout << "Lua error - Failed to call evaluate_killaction: " << (msg ? msg : "unknown") << endl;
+        lua_pop(L, 1);
+        return "SAFE";
+    }
+
+    const char* res = lua_tostring(L, -1);
+    string result = res ? res : "SAFE";
+    lua_pop(L, 1);
+    return result;
 }
