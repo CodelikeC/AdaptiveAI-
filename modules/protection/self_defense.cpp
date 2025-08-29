@@ -1,6 +1,6 @@
 #include <iostream> 
 using namespace std; 
-
+#include <vector>
 #include "self_defense.h"
 
 namespace adaptive_ai 
@@ -41,3 +41,4 @@ namespace adaptive_ai
 } // namespace adaptive_ai
 
     
+
