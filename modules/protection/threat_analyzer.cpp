@@ -1,66 +1,58 @@
 #include "threat_analyzer.h"
-#include <iostream>
 
-#include <chrono>
-using namespace std ; 
+using namespace std; 
 
-ThreatAnalyzer :: ThreatAnalyzer(){}
-
-ThreatAnalyzer :: ~ThreatAnalyzer(){}
-
-void ThreatAnalyzer :: ingestSignal(const ThreatSignal &signal)
+namespace adaptive_ai
 {
-    lock_guard<mutex> lock(bufferMutex); 
-    signalBuffer.push_back(signal); 
-}
+    ThreatAnalyzer :: ThreatAnalyzer() = default; 
+    ThreatAnalyzer :: ~ThreatAnalyzer() = default; 
 
-vector<ThreatSignal> ThreatAnalyzer :: getRecentSignals()
-{
-    lock_guard<mutex> lock(bufferMutex); 
-    return signalBuffer;
-}
+    void ThreatAnalyzer :: ingestSignal(const ThreatSignal &signal)
+    {
+        lock_guard <mutex> lock(bufferMutex_); 
+        signalBuffer_.push_back(signal); 
+    } 
 
-void ThreatAnalyzer :: clearSignals()
-{
-    lock_guard<mutex> lock(bufferMutex);
-    signalBuffer.clear(); 
-}
-
-float ThreatAnalyzer :: computeAggregateSeverity()
-{
-    lock_guard<mutex> lock(bufferMutex); 
-    float total = 0.0f;
-    for (const auto &sig : signalBuffer){
-        total += sig.severityScore;
-    }
-    return signalBuffer.empty() ?0.0f : total/signalBuffer.size(); 
-}
-
-ThreatLevel ThreatAnalyzer::classifyThreatLevel(float score) 
-{
-    if (score < 0.1f) return ThreatLevel::SAFE;
-    if (score < 0.3f) return ThreatLevel::LOW;
-    if (score < 0.6f) return ThreatLevel::MEDIUM;
-    if (score < 0.85f) return ThreatLevel::HIGH;
-    return ThreatLevel::CRITICAL;
-}
-
-ThreatLevel ThreatAnalyzer::analyzeThreat() 
-{
-    float score = computeAggregateSeverity();
-    ThreatLevel level = classifyThreatLevel(score);
-
-    string levelStr;
-    switch (level) {
-        case ThreatLevel::SAFE: levelStr = "SAFE"; break;
-        case ThreatLevel::LOW: levelStr = "LOW"; break;
-        case ThreatLevel::MEDIUM: levelStr = "MEDIUM"; break;
-        case ThreatLevel::HIGH: levelStr = "HIGH"; break;
-        case ThreatLevel::CRITICAL: levelStr = "CRITICAL"; break;
+    vector <ThreatSignal> ThreatAnalyzer:: getRecentSignal()
+    {
+        lock_guard<mutex>lock(bufferMutex_); 
+        return signalBuffer_; 
     }
 
-    cout << "[ThreatAnalyzer] Aggregate Score: " << score
-              << " | Threat Level: " << levelStr << endl;
+    void ThreatAnalyzer :: clearSignals()
+    {
+        lock_guard<mutex> lock(bufferMutex_);
+        signalBuffer_.clear(); 
+    }
 
-    return level;
+    float ThreatAnalyzer :: computeAggregateServerity()
+    {
+        lock_guard<mutex> lock(bufferMutex_); 
+        float total = 0.0f; 
+        for (const auto & s : signalBuffer_)
+        total += s.serverityScore;
+        return signalBuffer_.empty() ? 0.0f : total/signalBuffer_.size();
+    }
+
+    ThreatLevel ThreatAnalyzer::classifyThreatLevel(float score)
+    {
+        if (score < 0.1f) 
+        return ThreatLevel :: SAFE; 
+        if (score < 0.2f) 
+        return ThreatLevel :: LOW;
+        if (score < 0.3f) 
+        return ThreatLevel :: MEDIUM;
+        if (score < 0.4f) 
+        return ThreatLevel :: HIGH;
+        
+        if (score < 0.5f) 
+        
+        return ThreatLevel :: CRITICAL;
+    }
+
+    ThreatLevel ThreatAnalyzer  :: analyzeThreat()
+    {
+        float score = computeAggregateServerity(); 
+        return classifyThreatLevel(score); 
+    }
 }
