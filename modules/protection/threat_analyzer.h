@@ -1,46 +1,50 @@
-#ifndef threat_analyzer_h 
-#define threat_analyzer_h 
-
+#pragma once 
+#include <string>
+#include <algorithm>
+#include <vector> 
+#include <ctime> 
+#include <chrono>
 #include <iostream> 
-#include <string> 
-#include <vector>
-#include <mutex>
-#include <unordered_map>
+#include <mutex> 
 
-using namespace std;
-
-enum class ThreatLevel{
-    SAFE, 
-    LOW, 
-    MEDIUM, 
-    HIGH, 
-    CRITICAL
-};
-
-struct ThreatSignal
+namespace adaptive_ai
 {
-    string source; 
-    string description;
-    float severityScore; 
-    long timestamp; 
-}; 
+    enum class ThreatLevel 
+    {
+        SAFE, 
+        LOW,
+        MEDIUM, 
+        HIGH, 
+        CRITICAL 
+    };
 
-class ThreatAnalyzer
-{
-    public: 
-    ThreatAnalyzer(); 
-    ~ThreatAnalyzer();
+    struct ThreatSignal
+    {
+        std :: string response; 
+        std :: string description; 
+        float serverityScore; 
 
-    void ingestSignal(const ThreatSignal &signal);
-    ThreatLevel analyzeThreat(); 
-    vector<ThreatSignal> getRecentSignals();
-    void clearSignals();
-    
-    private:
-    vector<ThreatSignal>signalBuffer; 
-    mutex bufferMutex; 
+        std ::chrono :: system_clock :: time_point timestamp; 
+    }; 
 
-    float computeAggregateSeverity(); 
-    ThreatLevel classifyThreatLevel(float score);
-};
-#endif 
+    class ThreatAnalyzer
+    {
+        public: 
+        ThreatAnalyzer(); 
+        ~ThreatAnalyzer(); 
+
+        void ingestSignal(const ThreatSignal &signal);
+        // purely computes current threat level (deterministic)...// 
+        ThreatLevel analyzeThreat();  
+
+        std :: vector<ThreatSignal>getRecentSignal(); 
+        void clearSignals(); 
+
+        private: 
+        std::vector<ThreatSignal> signalBuffer_; 
+        std :: mutex bufferMutex_; 
+
+        float computeAggregateServerity(); 
+        ThreatLevel classifyThreatLevel(float score);
+    }; 
+} // namespace adaptive_ai ...// 
