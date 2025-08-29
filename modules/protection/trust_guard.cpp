@@ -1,32 +1,26 @@
-#include "trust_guard.h"
+#pragma once 
+#include <string>
+#include <algorithm>
 
-using namespace std; 
+#include <unordered_map>
+#include <mutex> 
 
-#include <string> 
-#include <iostream>
-
-TrustGuard :: TrustGuard(){}
-
-TrustGuard :: ~TrustGuard(){}
-
-void TrustGuard :: updateTrustScore(const string &module, int delta)
+namespace adaptive_ai
 {
-    lock_guard<mutex> lock(scoreMutex); 
-    TrustScore[module] +=delta; 
+    class TrustGuard
+    {
+        public: 
+        TrustGuard(int default_score = 100);
+        ~TrustGuard(); 
 
-    if (TrustScore[module] <0 ) TrustScore[module] = 0;
-    if (TrustScore[module] >100) TrustScore[module] = 100; 
-}
+        void updateTrustScore(const std :: string &module, int delta);
+        int getTrustScore(const std :: string &module); 
+        bool isTrusted(const std :: string &module);
 
-int TrustGuard :: getTrustScore(const string &module)
-{
-    lock_guard<mutex> lock(scoreMutex); 
-    if (TrustScore.find(module) == TrustScore.end())  
-    return 100; 
-    return TrustScore[module]; 
-}
-
-bool TrustGuard :: isTrusted(const string &module)
-{
-    return getTrustScore(module) >= TRUST_THRESHOLD;
+        private: 
+        std :: unordered_map < std::string, int> trustScore_; 
+        std :: mutex scoreMutex_;  
+        const int TRUST_THRESHOLD_ = 50; 
+        int defaultScore_;
+    };
 }
