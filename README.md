@@ -53,7 +53,7 @@ adaptive_ai_project/
 │   └── behavior_engine.h/.cpp        # Thực thi hành vi & logic
 
 ├── modules/
-│   ├── sensing/                       # Cảm biến hệ thống
+│   ├── sensor/                       # Cảm biến hệ thống
 │   │   ├── file_access_sensor.h/.cpp
 │   │   ├── registry_sensor.h/.cpp
 │   │   ├── network_sensor.h/.cpp
