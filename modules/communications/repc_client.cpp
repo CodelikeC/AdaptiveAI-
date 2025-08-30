@@ -40,7 +40,8 @@ namespace communication
     bool RpcClient::simulate_connection()
     {
         // Mô phỏng 90% thành công kết nối
-        return (rand() % 10 < 9);
+        double r = static_cast <double> (rand() / RAND_MAX);
+        return r < success_rate;
     }
     
     std::string RpcClient::simulate_server_response(const std::string& request)
@@ -51,4 +52,5 @@ namespace communication
         return "unknown_command";
     }
     
+
 } // namespace communication...// 
