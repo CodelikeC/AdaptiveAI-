@@ -4,7 +4,8 @@
 > **(Một nền tảng trí tuệ thích nghi thế hệ mới cho các hệ thống an toàn, tự tiến hóa và tự phòng thủ.)**
 
 ---
-<img width="512" height="512" alt="image" src="https://bing.com/th/id/BCO.fedc44ed-3892-4e9d-a319-428713998acf.png" />
+<img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/78081719-1c46-4c2f-9e29-9cfd101e6972" />
+
 
 ## 📜 Project Objectives
 
