@@ -169,7 +169,20 @@ std::optional<AttackScenario> AttackScenario::from_string(const std::string& s) 
         sc.add_step(st);
     }
 
-    return;
+    return std :: nullopt;
 }
+    void AttackScenario::set_state(ScenarioState new_state, std::function<void(bool)> on_complete) {
+    {
+        std::lock_guard<std::mutex> lk(m_mutex);
+        m_state = new_state;
+    }
+    if (on_complete) {
+        try {
+            on_complete(true);
+        } catch (...) {
+            // swallow exceptions
+        }
+    }
+}
+};  // namespace adaptive_ai
 
-} // namespace adaptive_ai
