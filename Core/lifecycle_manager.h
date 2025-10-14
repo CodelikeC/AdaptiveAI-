@@ -38,6 +38,19 @@ namespace adaptive_ai
 
             // Graceful shutdown..//
             void shutdown(); 
+
+            private: 
+            // Trang thai hien tai cua he thong.. // 
+            LifeCycleState state_; 
+            // Danh sach plugin da load (key : ten plugin)
+            map<string,struct PluginRecord> plugins_; 
+
+            // Danh sach callback duoc dang ky khi thay doi trang thai .. // 
+            vector<function<void(LifeCycleState)>> callbacks_; 
+
+            // Mutex bao ve dong bo truy cap state/ plugin..//
+            mutable mutex mu_;
         }; 
     } // namespace core 
 } // namespace adaptive_ai ///
+
