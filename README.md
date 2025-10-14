@@ -27,7 +27,7 @@ Adaptive AI là một dự án nghiên cứu và phát triển hệ thống trí
 - **Phát hiện** và **phòng thủ** trước các thay đổi bất thường hoặc mối đe dọa.
 - **Giao tiếp an toàn** với các hệ thống như Ethical AI.
 
-Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, bổ trợ cho dự án Safe AI trong tương lai.
+Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, bổ trợ cho dự án Ethical AI trong tương lai.
 
 ---
 
