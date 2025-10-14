@@ -13,7 +13,7 @@ Adaptive AI is a research and development project for intelligent systems that a
 - Automatically **adapt** to the operating environment.
 - **Evolve** strategies and behaviors based on real-world feedback.
 - **Detect** and **defend** against unusual changes or threats.
-- **Safely communicate** with systems like Safe AI.
+- **Safely communicate** with systems like Ethical AI.
 
 This project will serve as a precursor research branch, complementing the future Ethical AI project.
 
