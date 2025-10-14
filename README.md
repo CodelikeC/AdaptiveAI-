@@ -15,7 +15,7 @@ Adaptive AI is a research and development project for intelligent systems that a
 - **Detect** and **defend** against unusual changes or threats.
 - **Safely communicate** with systems like Safe AI.
 
-This project will serve as a precursor research branch, complementing the future Safe AI project.
+This project will serve as a precursor research branch, complementing the future Ethical AI project.
 
 ---
 
@@ -25,7 +25,7 @@ Adaptive AI là một dự án nghiên cứu và phát triển hệ thống trí
 - Tự động **thích nghi** theo môi trường hoạt động.
 - **Tiến hóa** chiến lược và hành vi dựa trên phản hồi thực tế.
 - **Phát hiện** và **phòng thủ** trước các thay đổi bất thường hoặc mối đe dọa.
-- **Giao tiếp an toàn** với các hệ thống như Safe AI.
+- **Giao tiếp an toàn** với các hệ thống như Ethical AI.
 
 Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, bổ trợ cho dự án Safe AI trong tương lai.
 
