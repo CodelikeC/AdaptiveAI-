@@ -1,7 +1,7 @@
 # Nguyễn Đức Trí – Founder & System Architect 
 
 ## Contact : https://github.com/issues/assigned
-## 🧬 2. `CONTRIBUTING.md`
+## 🧬 `CONTRIBUTING.md`
 ```markdown
 # Contributing to Adaptive AI
 
