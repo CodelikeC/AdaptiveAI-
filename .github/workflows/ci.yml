@@ -3,10 +3,10 @@ name: CI - Security File Check
 on:
   push:
     branches:
-      - CodelikeC-patch-1
+      - main-structure
   pull_request:
     branches:
-      - CodelikeC-patch-1
+      - main-structure
 
 jobs:
   check-security-md:
