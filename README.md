@@ -34,9 +34,9 @@ Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, b�
 ## 📂 Structure
 
 ```plaintext
-adaptive_ai_project/
+adaptiveAI/
 ├── README.md                  # Tổng quan, build, cách chạy, triết lý
-├── LICENSE                    # License dự án (MIT, Apache 2.0, SafeAI custom)
+├── LICENSE                    # License dự án (MIT, Apache 2.0,..)
 ├── .vscode/                   # VSCode settings (task, launch config)
 │   ├── tasks.json
 │   └── launch.json
@@ -52,7 +52,14 @@ adaptive_ai_project/
 │   ├── meta_learning.h/.cpp          # Học meta
 │   ├── state_model.h/.cpp            # Trạng thái hệ thống
 │   └── behavior_engine.h/.cpp        # Thực thi hành vi & logic
-
+|   ├── rollback_evaluator.h/.cpp
+|   ├── sandbox_guard.h/.cpp
+|   ├── simulation_plugin_interface.h/.cpp
+|   ├── sync_manager.h/.cpp
+|   ├── intergrity_checker.h/.cpp
+|   ├── memory_bridge.h/.cpp
+|   ├── lifecycle_manager.h/.cpp
+|   ├── rollback_orchestrator.h/.cpp                       
 ├── modules/
 │   ├── sensor/                       # Cảm biến hệ thống
 │   │   ├── file_access_sensor.h/.cpp
@@ -90,7 +97,7 @@ adaptive_ai_project/
 │       ├── rust_bridge.rs
 │       └── python_stub.py
 
-├── plugin/
+├── plugin/ - intrusion_plugin.cpp, plugin_interface.h, plugin_loader.h, plugin_sandbox.h/cpp, sensing_plugin.h/cpp,                      test_plugin.cpp 
 │   ├── lua/
 │   │   ├── Update_new_logic.lua
 │   │   ├── Check_the_logic.lua
@@ -114,7 +121,10 @@ adaptive_ai_project/
 │   ├── metrics.h/.cpp
 │   ├── config_loader.h/.cpp
 │   └── memory_policy.h/.cpp         # (NEW: quản lý RAM, time, CPU)
-
+|   ├──Memory : allocator_guard, memory_introspection, memory_snapshot, persistence_layer, test_intropsection_memory,
+|                test_memory_snapshot.cpp/.exe, test_persistence_layer.cpp/.exe
+|   ├── data_store: rollback_history.json, rollback_policy.json         
+|
 ├── scripts/                         # Dùng chạy demo và mô phỏng
 │   ├── run_adaptive_core.cpp
 │   ├── demo_sensing.cpp
@@ -128,11 +138,18 @@ adaptive_ai_project/
 │   └── processed/
 
 ├── tests/                           # Unit test độc lập
-│   ├── test_adaptation.cpp
-│   ├── test_feature_extraction.cpp
+│   ├── test_adaptation.cpp/.exe
+│   ├── test_feature_extraction.cpp/.exe
 │   ├── test_intrusion_detector.cpp
 │   └── test_plugin_loader.cpp
-
+|   ├── test_rollback_eval.cpp/.exe     
+|   ├── test_sync.cpp/.exe
+|   ├── test_protection.cpp
+|   ├── test_preprocessing.cpp
+|   ├── test_intrusion_detector.cpp
+    ├── test_intergration_server.cpp
+    ├── test_server.cpp
+    ├── test_sim_plugin.cpp                              
 ├── docs/                            # Tài liệu, biểu đồ, mô tả kiến trúc
 │   ├── architecture_diagram.png
 │   ├── adaptive_ai_design.md
