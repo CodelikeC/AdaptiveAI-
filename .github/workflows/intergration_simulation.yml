@@ -1,0 +1,19 @@
+name: Integration Simulation
+
+on:
+  pull_request:
+    branches: [ main-structure ]
+
+jobs:
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build
+        run: |
+          mkdir -p build && cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Debug
+          cmake --build . -- -j$(nproc)
+      - name: Run Simulator (headless)
+        run: |
+          ./build/simulate_packet_input --mode=integration --episodes=10
