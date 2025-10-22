@@ -1,0 +1,32 @@
+name: Build & Unit Tests
+
+on:
+  push:
+    branches:
+      - main-structure
+      - 'feat/**'
+  pull_request:
+    branches:
+      - main-structure
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        
+      - name: Setup CMake
+        uses: webfactory/ssh-agent@v0.7.0
+      - name: Configure
+        run: |
+          mkdir -p build && cd build
+          cmake .. -DCMAKE_BUILD_TYPE=Release
+      - name: Build
+        run: |
+          cd build
+          cmake --build . -- -j$(nproc)
+      - name: Run Unit Tests
+        run: |
+          cd build
+          ctest --output-on-failure
+    # Expose these as status names used in branch protection
