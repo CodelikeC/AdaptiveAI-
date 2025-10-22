@@ -1,0 +1,21 @@
+name: Security & Lint
+
+on:
+  pull_request:
+    branches: [ main-structure ]
+
+jobs:
+  security-lint:
+    runs-on: win32-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run clang-tidy (example)
+        run: |
+          mkdir -p build && cd build
+          cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+          # run clang-tidy (example, adapt to your toolchain)
+          run-clang-tidy -p .
+      - name: Run custom check-security-md
+        run: |
+          # placeholder: your security checker / policy validation
+          ./scripts/check-security-md.sh
