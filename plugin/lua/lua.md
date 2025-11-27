@@ -1,1 +1,3 @@
-
+- Tối ưu
+- Nhanh 
+- Logic ổn, thiết kế cơ chế hiệu quả.
