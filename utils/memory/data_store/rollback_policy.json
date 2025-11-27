@@ -1,0 +1,5 @@
+{
+    "cpu_weight": 0.4,
+    "mem_weight": 0.3,
+    "err_weight": 0.3
+}

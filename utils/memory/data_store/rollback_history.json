@@ -1,0 +1,16 @@
+{
+    "history": [
+        {
+            "snapshot_id": 1,
+            "score": 0.62,
+            "success": true,
+            "timestamp": 1739772300000
+        },
+        {
+            "snapshot_id": 2,
+            "score": 0.45,
+            "success": false,
+            "timestamp": 1739772400000
+        }
+    ]
+}
