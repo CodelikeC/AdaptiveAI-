@@ -1,1 +1,4 @@
-
+- Kết nối với hạ tầng bên ngoài
+- Liên kết đa ngôn ngữ. 
+- Có thể được cải thiện bởi tương quan nội suy. 
+- Tương hỗ các dự án khác trong hệ sinh thái. 
