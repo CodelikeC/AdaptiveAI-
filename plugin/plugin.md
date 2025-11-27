@@ -1,1 +1,3 @@
-
+- Kết nối với hạ tầng bên ngoài 
+- Liên kết đa ngôn ngữ. 
+- Tạo mối tương quan với IBCS, Driver Introspective Proxy, AIForDriver.
