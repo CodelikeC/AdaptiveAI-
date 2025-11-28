@@ -30,7 +30,7 @@ namespace adaptive_ai
             bool loadPlugin(const string &path); 
             bool unloadPlugin(const string &name); 
             bool reloadPlugin(const string &name); 
-
+            bool initialize(); 
             // Trigger rollback sequence (delegates to MemoryBridge etc..)
             bool triggerRollback(int snapshotID); 
 
