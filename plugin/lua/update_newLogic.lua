@@ -1,6 +1,6 @@
 print("update_new_lua")
 
-unction Load_new_logic(path)
+function Load_new_logic(path)
 print("Loading new logic", path)
 -- simualate logic has been loaded 
 local logic 
