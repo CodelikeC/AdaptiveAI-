@@ -1,5 +1,5 @@
 {
-    "$schema": "https://aicp-schema/adaptive-ai/v1",
+    "$schema": "https://aicp-schema/AdaptiveAI-/v1",
     "version": "1.0.0",
     "types": {
         "STATE_UPDATE": {
