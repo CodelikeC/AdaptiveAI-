@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.31.5)
-project(adaptiveAI)
+project(AdaptiveAI-)
 
 # Thiết lập chuẩn C++
 set(CMAKE_CXX_STANDARD 23)
