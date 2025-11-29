@@ -1,1 +1,31 @@
+{
+    "$schema": "https://aicp-schema/adaptive-ai/v1",
+    "version": "1.0.0",
+    "types": {
+        "STATE_UPDATE": {
+            "required": ["type", "timestamp", "state"],
+            "properties": {
+                "type": "STATE_UPDATE",
+                "timestamp": "integer",
+                "state": "object"
+            }
+        },
+        "EVENT": {
+            "required": ["type", "timestamp", "event_id"],
+            "properties": {
+                "type": "EVENT",
+                "event_id": "string",
+                "payload": "object"
+            }
+        },
+        "LOG": {
+            "required": ["type", "level", "message"],
+            "properties": {
+                "type": "LOG",
+                "level": "string",
+                "message": "string"
+            }
+        }
+    }
+}
 
