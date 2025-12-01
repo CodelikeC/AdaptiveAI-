@@ -48,7 +48,42 @@ bool SchemaValidator :: parse_schema(const string &json)
             if (a == string :: npos) break; 
             size_t b = arr.find("\"", a + 1) ; 
 
-            string field = arr.substr(a + 1); 
+            string field = arr.substr(a + 1, b - a - 1);
+            reqs.push_back(field); 
+            p = b + 1;  
+        }
+        required_fields[type_name] = reqs; 
+        pos = arr_end + 1; 
+    }
+    return true; 
+}
+
+SchemaValidator :: Error SchemaValidator :: validate(
+    const unordered_map<string, string> &msg)
+{
+    // check message type.. 
+    auto t_it = msg.find("type"); 
+    if (t_it == msg.end()){
+        return {
+            false, "Missing 'type' field"
+        }; 
+    }
+    string type = t_it -> second;
+    auto s_it = required_fields.find(type); 
+    if (s_it == required_fields.end())
+    return {
+        false, "Unknown message type:" + type 
+    };
+
+    // Check required fields..
+    for (auto &field : s_it -> second){
+        if (msg.find(field) == msg.end()){
+            return {
+                false, "Missing Required field:" + field
+            }; 
         }
     }
+    return {
+        true, ""
+    }; 
 }
