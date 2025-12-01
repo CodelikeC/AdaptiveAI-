@@ -5,11 +5,12 @@ namespace communication
     CommunicationManager :: CommunicationManager(const string &address, int port)
     : rpc_client(address, port), secure_channel(address, port){}
 
-    CommunicationManager :: CommunicationManager()
-    {
-        cout <<"The communication is running" << endl ; 
-        initialize();
-    }
+    // CommunicationManager :: CommunicationManager()
+    // {
+    //     cout <<"The communication is running" << endl; 
+    //     initialize();
+    // }
+    
     bool CommunicationManager :: initialize()
     {
         bool rpc_ready = rpc_client.ping_server(); 

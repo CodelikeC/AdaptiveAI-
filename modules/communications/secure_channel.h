@@ -21,7 +21,7 @@ namespace communication
 
         bool send_secure(const string &data);
 
-        private: 
+        public: 
         string server_address_; 
         int port_; 
         bool connected_;
