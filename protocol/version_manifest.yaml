@@ -1,7 +1,32 @@
-protocol_version: "1.0.0"
-schema_version: "1.0.0"
-connector_version: "1.0.0"
-adapter_version: "1.0.0"
+protocol:
+  name: AdaptiveAI-Protocol
+  version: "1.0.0"
+  checksum: "auto_generated"
 
-compatible_runtime: 
-  - adaptive_ai_core >= 0.9.0
+schema:
+  version: "1.0.0"
+  file: "message_schema.json"
+
+connector:
+  version: "1.0.0"
+  impl: "connector.cpp"
+
+lua_adapter:
+  version: "1.0.0"
+  file: "adapter.lua"
+
+compatibility:
+  adaptive_ai_core: ">=0.9.0"
+  runtime_engine: ">=1.0.0"
+
+features:
+  - payload_framing
+  - crc32
+  - schema_validation
+  - lua_bridge
+  - safe_decode
+
+metadata:
+  author: "Tri Nguyen Duc"
+  updated: "2025-12"
+
