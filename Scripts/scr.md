@@ -1,4 +1,6 @@
 # Demo Scripts
+
+#### Vietnamese: 
 - Phần này lo về vấn đề viết logic cho khả năng thích ứng của bộ cảm biến.
 - Chạy thử các tính năng của phần lõi "CORE".
 - Kiểm tra khả năng trơn tru khi giao tiếp với dữ liệu thực từ con người. 
@@ -55,7 +57,7 @@ Sensor tự hiệu chỉnh được, CORE phản ứng hợp lý.
 
 Giao tiếp dữ liệu người dùng → phản hồi tự nhiên, mượt.
 
-+ English :
+#### English: 
 
 - This section is about writing logic for the adaptive capabilities of the sensor.
 

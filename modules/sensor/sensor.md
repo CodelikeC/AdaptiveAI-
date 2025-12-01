@@ -1,6 +1,6 @@
 ## Folder Sensor 
 
-+ Vietnamese: 
+#### Vietnamese: 
 
 - Folder sensor là một phần quan trọng của project Adaptive AI, có nhiệm vụ ghi nhận đối tượng, hành vi, cảm xúc của môi trường xung quanh (đặc biệt là môi trường vật lý) trong thời gian thực. Điều này cho phép AI có khả năng tương tác trực quan với thế giới vật lý, có thể dễ dàng đưa ra hành vi dựa vào dữ liệu tiền xử lý trong không gian thực và dữ liệu trừu tượng. 
 
@@ -8,7 +8,7 @@
 
 - Folder sensor sẽ được nằm dưới sự giám sát của cơ chế nội sinh và rollback, killswitch trong thời gian thực nhằm thúc đẩy tính minh bạch của hệ thống.  
 
-+ English:
+#### English:
 
 - Folder sensor is an important part of the Adaptive AI project, which is responsible for recording objects, behaviors, and emotions of the surrounding environment (especially the physical environment) in real time. This allows AI to interact intuitively with the physical world, and can easily make actions based on pre-processed data in real space and abstract data.
 
