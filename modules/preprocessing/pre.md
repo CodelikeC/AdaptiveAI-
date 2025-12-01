@@ -167,9 +167,3 @@ Folder này tuân theo **Apache 2.0** giống toàn bộ Adaptive AI.
 
 ---
 
-Nếu bạn muốn, tôi có thể:
-✅ Viết thêm **README riêng cho từng module con**
-✅ Viết đầy đủ **code mẫu cho data_cleaner, feature_extraction, anomaly_pre_filter**
-✅ Thiết kế **flowchart chuẩn cho preprocessing**
-Chỉ cần nói tôi biết.
-
