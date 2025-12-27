@@ -1,7 +1,7 @@
 #include "adaption.h"
 using namespace std; 
 #include <iostream>
-
+// hoc thich nghi.. 
 AdaptiveEngine :: AdaptiveEngine() : adaption_level (0) {};
 AdaptiveEngine :: ~AdaptiveEngine()
 {}
