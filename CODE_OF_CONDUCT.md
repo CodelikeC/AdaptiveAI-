@@ -16,6 +16,6 @@ We expect all contributors to uphold a professional and inclusive environment.
 Violations can be reported via GitHub Issues or directly to maintainers.  
 Serious breaches may result in suspension or permanent removal from the project.
 ```
-### 4. LICENSE
+### LICENSE
 → Apache 2.0 official:
 https://www.apache.org/licenses/LICENSE-2.0.txt
