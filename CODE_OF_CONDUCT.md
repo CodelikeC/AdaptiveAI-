@@ -1,5 +1,6 @@
 ## CODE_OF_CONDUCT
 ```markdown
+
 # Code of Conduct – Adaptive AI
 
 Adaptive AI is a community for responsible, ethical, and innovative research.  
