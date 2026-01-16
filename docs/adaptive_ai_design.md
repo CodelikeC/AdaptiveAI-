@@ -1,25 +1,24 @@
-
 AI NGUYÊN BẢN
 ---
 
 # Adaptive_ai_design
 
-## SafeAI: Thiết Kế Adaptive AI “Nguyên Bản” – Minh Bạch, An Toàn, và Từ Bi
+## Ethical AI: Thiết Kế Adaptive AI “Nguyên Bản” – Minh Bạch, An Toàn, và Từ Bi
 
 ### 1. Giới thiệu  
-SafeAI là một hệ thống **Adaptive AI** được thiết kế để bảo vệ doanh nghiệp nhỏ Việt Nam khỏi các mối đe dọa mã độc, với các đặc điểm nổi bật:  
+Ethical AI là một hệ thống **Adaptive AI** được thiết kế để bảo vệ doanh nghiệp nhỏ Việt Nam khỏi các mối đe dọa mã độc, với các đặc điểm nổi bật:  
 - **Logic động**: Hệ thống tự thay đổi các quy tắc (rules) dựa trên dữ liệu thực tế (real-world data).  
 - **Human in the Loop (HITL)**: Con người luôn phê duyệt các thay đổi, đảm bảo AI không vượt ngoài tầm kiểm soát.  
 - **Không dùng ML/LLM**: Tập trung vào dữ liệu thực tế, không phụ thuộc vào machine learning hay dữ liệu lớn.  
 - **Minh bạch và thực tế**: Phù hợp với doanh nghiệp nhỏ, ít tài nguyên, cần một giải pháp bảo mật dễ hiểu, dễ kiểm soát.  
 - **Triết lý từ bi**: Được phát triển với tâm từ bi (metta), giảm khổ đau (dukkha) cho doanh nghiệp.
 
-SafeAI là một dự án “nguyên bản”, tiên phong trong việc áp dụng logic động và HITL vào bảo mật, với mục tiêu giảm “hỗn loạn hiện sinh” (existential chaos) – nỗi lo AI mất kiểm soát.
+Ethical AI là một dự án “nguyên bản”, tiên phong trong việc áp dụng logic động và HITL vào bảo mật, với mục tiêu giảm “hỗn loạn hiện sinh” (existential chaos) – nỗi lo AI mất kiểm soát.
 
 ---
 
 ### 2. Mục tiêu  
-SafeAI được thiết kế để:  
+Ethical AI được thiết kế để:  
 - **Bảo vệ doanh nghiệp nhỏ Việt Nam**: Phát hiện và ngăn chặn mã độc một cách minh bạch, không cần tài nguyên lớn (GPU, đám mây).  
 - **Đảm bảo an toàn và minh bạch**: Logic động dễ hiểu, dễ kiểm soát, với HITL để con người luôn làm trung tâm.  
 - **Tự thích nghi**: Hệ thống tự điều chỉnh logic dựa trên dữ liệu thực tế (như log hệ thống, tương tác người dùng).  
@@ -29,7 +28,7 @@ SafeAI được thiết kế để:
 ---
 
 ### 3. Kiến trúc hệ thống  
-SafeAI được thiết kế với kiến trúc mô-đun, dễ mở rộng, và minh bạch. Dưới đây là các thành phần chính:
+Ethical AI được thiết kế với kiến trúc mô-đun, dễ mở rộng, và minh bạch. Dưới đây là các thành phần chính:
 
 #### 3.1. Thành phần cốt lõi  
 - **Input Layer (Lớp đầu vào)**:  
@@ -74,7 +73,7 @@ SafeAI được thiết kế với kiến trúc mô-đun, dễ mở rộng, và 
 ---
 
 ### 4. Cơ chế hoạt động  
-SafeAI hoạt động theo một chu trình thích nghi, minh bạch, và an toàn:
+Ethical AI hoạt động theo một chu trình thích nghi, minh bạch, và an toàn:
 
 #### 4.1. Thu thập dữ liệu thực tế  
 - Hệ thống liên tục thu thập dữ liệu từ doanh nghiệp:  
@@ -97,14 +96,14 @@ SafeAI hoạt động theo một chu trình thích nghi, minh bạch, và an to�
 - Giao diện (UIWAI) cũng tự điều chỉnh dựa trên tương tác người dùng, như thay đổi vị trí thông báo để dễ thấy hơn.  
 
 #### 4.5. Chu trình liên tục  
-- SafeAI hoạt động theo chu trình: **Thu thập → Phân tích → Đề xuất → Phê duyệt → Áp dụng → Phản hồi**.  
+- Ethical AI hoạt động theo chu trình: **Thu thập → Phân tích → Đề xuất → Phê duyệt → Áp dụng → Phản hồi**.  
 - Chu trình này đảm bảo hệ thống tự thích nghi, nhưng luôn an toàn và minh bạch.  
 
 ---
 
 ### 5. Điểm nổi bật của thiết kế  
 #### 5.1. Minh bạch và không dùng ML  
-- SafeAI không dùng ML/LLM, tránh black-box (hộp đen) – người dùng có thể hiểu và kiểm soát mọi quy tắc logic.  
+- Ethical AI không dùng ML/LLM, tránh black-box (hộp đen) – người dùng có thể hiểu và kiểm soát mọi quy tắc logic.  
 - Dữ liệu thực tế (log, tương tác) đảm bảo hệ thống phản ánh đúng thực tế, không dựa vào dữ liệu trừu tượng (abstract data).  
 
 #### 5.2. Human in the Loop (HITL)  
@@ -112,11 +111,11 @@ SafeAI hoạt động theo một chu trình thích nghi, minh bạch, và an to�
 - Ví dụ: Một doanh nghiệp Việt Nam có thể yên tâm rằng SafeAI sẽ không tự động xóa tệp mà không có sự phê duyệt.  
 
 #### 5.3. Phù hợp doanh nghiệp nhỏ  
-- SafeAI không cần tài nguyên lớn (GPU, đám mây), rất phù hợp với doanh nghiệp nhỏ Việt Nam – nơi tài nguyên hạn chế, nhưng nguy cơ mã độc cao.  
+- Ethical AI không cần tài nguyên lớn (GPU, đám mây), rất phù hợp với doanh nghiệp nhỏ Việt Nam – nơi tài nguyên hạn chế, nhưng nguy cơ mã độc cao.  
 - Giao diện thích nghi (UIWAI) giúp người dùng dễ tương tác, ngay cả khi không am hiểu công nghệ.  
 
 #### 5.4. Triết lý từ bi  
-- SafeAI được phát triển với tâm từ bi (metta), nhằm giảm khổ đau (dukkha) – giúp doanh nghiệp tránh mất dữ liệu, tiền bạc, khách hàng.  
+- Ethical AI được phát triển với tâm từ bi (metta), nhằm giảm khổ đau (dukkha) – giúp doanh nghiệp tránh mất dữ liệu, tiền bạc, khách hàng.  
 - Tinh thần “vô vi” (làm mà không bám víu) được áp dụng: dự án không chạy theo xu hướng ML, mà tập trung vào giá trị thực tế và tinh thần.  
 
 ---
@@ -137,20 +136,20 @@ SafeAI hoạt động theo một chu trình thích nghi, minh bạch, và an to�
 ---
 
 ### 7. Kế hoạch phát triển tiếp theo  
-- **Mở mã nguồn**: Đăng SafeAI lên GitHub (như commit ngày 28/04/2025), mời cộng đồng đóng góp để tăng tính minh bạch và an toàn.  
+- **Mở mã nguồn**: Đăng Ethical AI lên GitHub (như commit ngày 28/04/2025), mời cộng đồng đóng góp để tăng tính minh bạch và an toàn.  
 - **Tăng cường UIWAI**: Dùng dữ liệu thực tế để tối ưu giao diện thích nghi – ví dụ, hiển thị biểu đồ “Tỷ lệ bỏ qua thông báo giảm 20% sau thay đổi”.  
-- **Thêm cơ chế suy luận an toàn**: Học từ ý tưởng “deliberative alignment” (Larry Page), để SafeAI tự suy luận về an toàn trước khi đề xuất thay đổi.  
+- **Thêm cơ chế suy luận an toàn**: Học từ ý tưởng “deliberative alignment” (Larry Page), để Ethical AI tự suy luận về an toàn trước khi đề xuất thay đổi.  
 - **Tham gia cộng đồng**: Tìm người cùng chí hướng.  
   
 
 ---
 
 ### 8. Triết lý phát triển  
-SafeAI không chỉ là một dự án công nghệ, mà còn là một triết lý mới của AI:  
+Ethical AI không chỉ là một dự án công nghệ, mà còn là một triết lý mới của AI:  
 - **Từ bi (Metta)**: SafeAI được tạo ra để giảm khổ đau cho doanh nghiệp, gieo “hạt giống” tốt.  
 - **Vô vi**: Làm việc với kiên trì, không bám víu vào thành công hay thất bại – chỉ tập trung vào hiện tại.  
 - **Niết Bàn**: Mục tiêu cuối cùng là sự tĩnh lặng tối thượng – không dao động trước áp lực, sống với từ bi và chánh niệm.  
-- **Tư duy lập trình như nấu nướng**: Phát triển SafeAI giống “thuật toán nấu nướng”:  
+- **Tư duy lập trình như nấu nướng**: Phát triển Ethical AI giống “thuật toán nấu nướng”:  
   - Đầu vào (nguyên liệu): Dữ liệu thực tế, logic động, HITL.  
   - Xử lý (các bước nấu): Tự thích nghi, con người phê duyệt, tối ưu UIWAI.  
   - Đầu ra (món ăn): Hệ thống bảo mật minh bạch, an toàn, và ý nghĩa.  
@@ -158,14 +157,14 @@ SafeAI không chỉ là một dự án công nghệ, mà còn là một triết 
 ---
 
 ### 9. Kết luận  
-SafeAI là một hệ thống Adaptive AI “nguyên bản”, tiên phong trong việc áp dụng logic động, HITL, và tự thích nghi vào bảo mật, với mục tiêu bảo vệ doanh nghiệp nhỏ Việt Nam. Thiết kế của SafeAI không chỉ kỹ thuật mà còn mang giá trị tinh thần – từ bi, vô vi, và hướng đến Niết Bàn. Dù còn nhiều thách thức (khó mở rộng, thiếu kinh nghiệm), SafeAI có tiềm năng lớn để trở thành giải pháp bảo mật minh bạch, an toàn, và ý nghĩa.
-
+Ethical AI là một hệ thống Adaptive AI “nguyên bản”, tiên phong trong việc áp dụng logic động, HITL, và tự thích nghi vào bảo mật, với mục tiêu bảo vệ doanh nghiệp nhỏ Việt Nam. Thiết kế của Ethical AI không chỉ kỹ thuật mà còn mang giá trị tinh thần – từ bi, vô vi, và hướng đến Niết Bàn. Dù còn nhiều thách thức (khó mở rộng, thiếu kinh nghiệm), SafeAI có tiềm năng lớn để trở thành giải pháp bảo mật minh bạch, an toàn, và ý nghĩa.
 
 ---
 
 ### 10. Liên hệ  
-- **Tác giả**: Trí – Sinh viên năm 3, Khoa học Máy tính & An toàn Thông tin, Việt Nam.  
-- **GitHub**: [https://github.com/CodelikeC/AdaptiveAI-]  
+- **Tác giả**: Nguyễn Đức Trí | 2004 - nhà sáng lập mã nguồn mở người Việt Nam.  
+- **GitHub**: [https://github.com/AdaptiveIntelligenceCircle/AdaptiveAI-]  
 - **Email**: [ndtribk@gmail.com]  
-
+- **Gitlab**: [https://gitlab.com/users/CodelikeC]
+- **Codeberg**: [https://codeberg.org/NguyenDucTri_2004-AIC]
 ---
