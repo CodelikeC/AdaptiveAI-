@@ -1,8 +1,8 @@
-# SafeAI: Original Adaptive AI Design – Transparent, Safe, and Compassionate
+# Ethical AI: Original Adaptive AI Design – Transparent, Safe, and Compassionate
 
 ## 1. Introduction
 
-**SafeAI** is an **Adaptive AI system** designed to protect small businesses (especially in Vietnam and other emerging markets) from malware threats, with the following key features:
+**Ethical AI** is an **Adaptive AI system** designed to protect small businesses (especially in Vietnam and other emerging markets) from malware threats, with the following key features:
 
 * **Dynamic Logic:** The system automatically updates its rules based on real-world data.
 * **Human in the Loop (HITL):** Humans always approve changes, ensuring AI never goes out of control.
@@ -10,13 +10,13 @@
 * **Transparent and practical:** Designed for small businesses with limited resources, easy to understand and control.
 * **Compassionate philosophy:** Developed with *metta* (loving-kindness), aiming to reduce *dukkha* (suffering) caused by cyber threats.
 
-SafeAI is an “original” and pioneering project that applies **dynamic logic** and **HITL** to cybersecurity, with the goal of reducing “existential chaos” — the fear of uncontrollable AI.
+Ethical AI is an “original” and pioneering project that applies **dynamic logic** and **HITL** to cybersecurity, with the goal of reducing “existential chaos” — the fear of uncontrollable AI.
 
 ---
 
 ## 2. Objectives
 
-SafeAI is designed to:
+Ethical AI is designed to:
 
 * **Protect small businesses:** Detect and prevent malware transparently, without requiring large resources (GPU, cloud).
 * **Ensure safety and transparency:** Dynamic logic remains simple and controllable, with HITL keeping humans at the center.
@@ -28,7 +28,7 @@ SafeAI is designed to:
 
 ## 3. System Architecture
 
-SafeAI is designed with a modular, transparent, and extensible architecture.
+Ethical AI is designed with a modular, transparent, and extensible architecture.
 
 ### 3.1 Core Components
 
@@ -85,7 +85,7 @@ SafeAI is designed with a modular, transparent, and extensible architecture.
 
 ## 4. Workflow
 
-SafeAI operates in a transparent, safe adaptive loop:
+Ethical AI operates in a transparent, safe adaptive loop:
 
 1. **Data Collection**
 
@@ -164,7 +164,7 @@ SafeAI operates in a transparent, safe adaptive loop:
 
 ## 8. Development Philosophy
 
-SafeAI is not just technology, but a philosophy of AI design:
+Adaptive AI is not just technology, but a philosophy of AI design:
 
 * **Metta (loving-kindness):** Reduce suffering for businesses.
 * **Wu Wei (effortless alignment):** Work calmly, without attachment to outcomes.
@@ -180,7 +180,7 @@ SafeAI is not just technology, but a philosophy of AI design:
 
 ## 9. Conclusion
 
-SafeAI is an **original Adaptive AI system** that pioneers the integration of **dynamic logic, HITL, and self-adaptation** for cybersecurity, targeting small businesses.
+Ethical AI is an **original Adaptive AI system** that pioneers the integration of **dynamic logic, HITL, and self-adaptation** for cybersecurity, targeting small businesses.
 
 It combines **technical innovation** with **spiritual depth** — transparency, safety, compassion (*metta*), and tranquility (*nirvana*).
 
@@ -189,4 +189,8 @@ Though still early and untested at scale, SafeAI has strong potential as a **saf
 ---
 
 # Contact
-Email : ndtribk@gmail.com
+- **GitHub**: [https://github.com/AdaptiveIntelligenceCircle/AdaptiveAI-]  
+- **Email**: [ndtribk@gmail.com]  
+- **Gitlab**: [https://gitlab.com/users/CodelikeC]
+- **Codeberg**: [https://codeberg.org/NguyenDucTri_2004-AIC]
+
