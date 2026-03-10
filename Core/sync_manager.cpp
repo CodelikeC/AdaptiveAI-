@@ -28,13 +28,16 @@ namespace {
     };
 
     NetworkState g_net;
-
+}
     SyncManager::SyncManager() {}
+    SyncManager::~SyncManager(){}
 
-bool SyncManager::start(const string &bindAddr) {
+bool SyncManager::start(const string &bindAddr) 
+{
     lock_guard<mutex> lock(g_net.mu);
 
-    if (g_net.running) {
+    if (g_net.running) 
+    {
         cerr << "[SyncManager] Already running on " << g_net.selfAddr << endl;
         return false;
     }
@@ -47,10 +50,12 @@ bool SyncManager::start(const string &bindAddr) {
     return true;
 }
 
-void SyncManager::stop() {
+void SyncManager::stop() 
+{
     lock_guard<mutex> lock(g_net.mu);
 
-    if (!g_net.running) {
+    if (!g_net.running) 
+    {
         cerr << "[SyncManager] Not running." << endl;
         return;
     }
@@ -64,7 +69,8 @@ void SyncManager::stop() {
 bool SyncManager::pushSnapshot(const string &nodeAddr, int snapshotId) {
     lock_guard<mutex> lock(g_net.mu);
 
-    if (!g_net.running) {
+    if (!g_net.running) 
+    {
         cerr << "[SyncManager] Cannot push, node is offline." << endl;
         return false;
     }
@@ -79,7 +85,8 @@ bool SyncManager::pushSnapshot(const string &nodeAddr, int snapshotId) {
          << " to node " << nodeAddr << "..." << endl;
 
     // Giả lập delay mạng
-    thread([snapshotId, nodeAddr]() {
+    thread([snapshotId, nodeAddr]() 
+    {
         this_thread::sleep_for(chrono::milliseconds(100 + rand() % 200));
 
         string payload = "Snapshot_" + to_string(snapshotId) + "_payload";
@@ -98,7 +105,8 @@ bool SyncManager::pushSnapshot(const string &nodeAddr, int snapshotId) {
 bool SyncManager::requestSnapshot(const string &nodeAddr, int snapshotId) {
     lock_guard<mutex> lock(g_net.mu);
 
-    if (!g_net.running) {
+    if (!g_net.running) 
+    {
         cerr << "[SyncManager] Cannot request, node is offline." << endl;
         return false;
     }
@@ -113,7 +121,8 @@ bool SyncManager::requestSnapshot(const string &nodeAddr, int snapshotId) {
          << " from " << nodeAddr << "..." << endl;
 
     // Giả lập async pull
-    thread([snapshotId, nodeAddr]() {
+    thread([snapshotId, nodeAddr]() 
+    {
         this_thread::sleep_for(chrono::milliseconds(80 + rand() % 200));
 
         string payload = "Fetched_Snapshot_" + to_string(snapshotId) + "_from_" + nodeAddr;
@@ -133,5 +142,4 @@ void SyncManager::onSnapshotReceive(const function<void(int, const string &)> &c
     lock_guard<mutex> lock(g_net.mu);
     g_net.snapshotCallback = cb;
     cout << "[SyncManager] Snapshot receive callback registered." << endl;
-}
 }
