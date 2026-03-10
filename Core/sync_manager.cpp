@@ -29,7 +29,7 @@ namespace {
 
     NetworkState g_net;
 }
-    SyncManager::SyncManager() {}
+    SyncManager::SyncManager(){}
     SyncManager::~SyncManager(){}
 
 bool SyncManager::start(const string &bindAddr) 

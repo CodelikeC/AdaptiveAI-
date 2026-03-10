@@ -16,7 +16,7 @@ namespace adaptive_ai
         {
             public: 
             SyncManager(); 
-
+            ~SyncManager();
             // start network sync service (bind, advertise)...
             bool start(const string &bindAddr); 
 
