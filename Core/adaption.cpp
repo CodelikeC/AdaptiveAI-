@@ -8,17 +8,16 @@ AdaptiveEngine :: ~AdaptiveEngine()
 
 void AdaptiveEngine :: initialize()
 {
-    cout <<"Adaption Engine initilized :" << endl; 
+    cout <<"Adaption Engine initilized..." << endl; 
 }; 
 
 void AdaptiveEngine :: adapt(string &enviroment_state)
 {
-    cout <<"Adaptive Engine : Adapting to:" << endl;
-    cout << enviroment_state ; 
+    cout <<"Adaptive Engine : Adapting to:" << enviroment_state << endl; 
     adaption_level++; 
 }
 
 void AdaptiveEngine :: ShutDown()
 {
-    cout <<"[AdaptionEngine] shutting down" << endl; 
+    cout <<"[AdaptionEngine] shutting down..." << endl; 
 }

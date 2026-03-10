@@ -18,5 +18,5 @@ class AdaptiveEngine
 
     private: 
     // Internal state; 
-    int adaption_level;
+    int adaption_level = 0;
 };
