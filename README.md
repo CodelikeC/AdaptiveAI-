@@ -7,27 +7,21 @@
 <img width="512" height="512" alt="image" src="https://github.com/user-attachments/assets/78081719-1c46-4c2f-9e29-9cfd101e6972" />
 
 
-## 📜 Project Objectives
+## 📜 Project Vision
 
-Adaptive AI is a research and development project for intelligent systems that are capable of:
-- Automatically **adapt** to the operating environment.
-- **Evolve** strategies and behaviors based on real-world feedback.
-- **Detect** and **defend** against unusual changes or threats.
-- **Safely communicate** with systems like Ethical AI.
+AdaptiveAI is the core research branch of the **Adaptive Intelligence Circle (AIC)**, focusing on building an intelligent system capable of:
 
-This project will serve as a precursor research branch, complementing the future Ethical AI project.
+- Automatically **adapting** to changing environments.
 
----
+- **Evolving** strategies and behaviors based on real-world feedback.
 
-## 📜 Mục tiêu dự án (in Vietnamese) 
+- **Detecting and defending** against threats and anomalies.
 
-Adaptive AI là một dự án nghiên cứu và phát triển hệ thống trí tuệ có khả năng:
-- Tự động **thích nghi** theo môi trường hoạt động.
-- **Tiến hóa** chiến lược và hành vi dựa trên phản hồi thực tế.
-- **Phát hiện** và **phòng thủ** trước các thay đổi bất thường hoặc mối đe dọa.
-- **Giao tiếp an toàn** với các hệ thống như Ethical AI.
+- **Communicating securely** with Ethical AI and Human Meaning Network systems.
 
-Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, bổ trợ cho dự án Ethical AI trong tương lai.
+This is not just an intelligent engine, but the infrastructure for an ethically sound intelligence from the ground up — a crucial prerequisite for the entire AIC ecosystem.
+
+**Update March 2026**: Core engine is stable, plugin system (Lua + Rust) is working, memory introspection and rollback mechanism have been implemented for testing.
 
 ---
 
@@ -35,141 +29,83 @@ Dự án này sẽ phục vụ như một nhánh nghiên cứu tiền thân, b�
 
 ```plaintext
 adaptiveAI/
-├── README.md                  # Tổng quan, build, cách chạy, triết lý
-├── LICENSE                    # License dự án (MIT, Apache 2.0,..)
-├── .vscode/                   # VSCode settings (task, launch config)
-│   ├── tasks.json
-│   └── launch.json
-
-├── config/                    # Cấu hình JSON/YAML
-│   ├── default.yaml
-│   └── adaptive_settings.yaml
-
-├── core/                      # Adaptive Core Engine
-│   ├── adaptation.h/.cpp              # Cốt lõi thích nghi
-│   ├── evolution.h/.cpp               # Cơ chế tiến hóa
-│   ├── policy.h/.cpp                  # Chính sách runtime
-│   ├── meta_learning.h/.cpp          # Học meta
-│   ├── state_model.h/.cpp            # Trạng thái hệ thống
-│   └── behavior_engine.h/.cpp        # Thực thi hành vi & logic
-|   ├── rollback_evaluator.h/.cpp
-|   ├── sandbox_guard.h/.cpp
-|   ├── simulation_plugin_interface.h/.cpp
-|   ├── sync_manager.h/.cpp
-|   ├── intergrity_checker.h/.cpp
-|   ├── memory_bridge.h/.cpp
-|   ├── lifecycle_manager.h/.cpp
-|   ├── rollback_orchestrator.h/.cpp                       
+├── README.md
+├── LICENSE
+├── .vscode/
+├── config/
+├── core/                      # Adaptive Core Engine (Introspective Behavioral Compiler)
 ├── modules/
-│   ├── sensor/                       # Cảm biến hệ thống
-│   │   ├── file_access_sensor.h/.cpp
-│   │   ├── registry_sensor.h/.cpp
-│   │   ├── network_sensor.h/.cpp
-│   │   ├── system_monitor.h/.cpp
-│   │   ├── user_behavior_sensor.h/.cpp
-│   │   └── outlier_sensor.h/.cpp
+│   ├── sensor/
+│   ├── preprocessing/
+│   ├── protection/
+│   ├── communication/
+│   └── integration/
+├── plugin/                    # Lua + Rust plugin system
+├── utils/
+├── scripts/
+├── data/
+├── tests/
+├── docs/
+└── CMakeLists.txt
+``` 
+--- 
 
-│   ├── preprocessing/                # Xử lý dữ liệu
-│   │   ├── data_cleaner.h/.cpp
-│   │   ├── feature_extraction.h/.cpp
-│   │   ├── anomaly_pre_filter.h/.cpp
-│   │   ├── contextualizer.h/.cpp
-│   │   ├── data_labeler.h/.cpp
-│   │   ├── temporal_align.h/.cpp
-│   │   └── pre_feature_validator.h/.cpp
-
-│   ├── protection/                   # Phòng thủ & phản ứng
-│   │   ├── intrusion_detector.h/.cpp
-│   │   ├── self_defense.h/.cpp
-│   │   ├── threat_analyzer.h/.cpp
-│   │   ├── trust_guard.h/.cpp
-│   │   └── killswitch_monitor.h/.cpp
-
-│   ├── communication/               # Giao tiếp hệ thống
-│   │   ├── repc_client.h/.cpp
-│   │   ├── secure_channel.h/.cpp
-│   │   └── communication_manager.h/.cpp  (optional)
-
-│   └── integration/                 # Kết nối đa ngôn ngữ
-│       ├── plugin_interface.h/.cpp
-│       ├── sensing_plugin.h/.cpp
-│       ├── sensing_loader.h/.cpp
-│       ├── rust_bridge.rs
-│       └── python_stub.py
-
-├── plugin/ - intrusion_plugin.cpp, plugin_interface.h, plugin_loader.h, plugin_sandbox.h/cpp, sensing_plugin.h/cpp,                      test_plugin.cpp 
-│   ├── lua/
-│   │   ├── Update_new_logic.lua
-│   │   ├── Check_the_logic.lua
-│   │   ├── MakeDecision.lua
-│   │   ├── Rollback.lua
-│   │   ├── killswitchNewLogic.lua
-│   │   ├── threat_policy.lua
-│   │   └── ScriptsWithLua.h/.cpp
-
-│   ├── rust/
-│   │   ├── behavior.rs
-│   │   ├── detect_anomaly.rs
-│   │   ├── trust_guard.rs
-│   │   ├── secure_bridge.rs
-│   │   └── sync_update.rs
-
-│   └── python/ (optional future)
-
-├── utils/                           # Công cụ hỗ trợ nội bộ
-│   ├── logger.h/.cpp
-│   ├── metrics.h/.cpp
-│   ├── config_loader.h/.cpp
-│   └── memory_policy.h/.cpp         # (NEW: quản lý RAM, time, CPU)
-|   ├──Memory : allocator_guard, memory_introspection, memory_snapshot, persistence_layer, test_intropsection_memory,
-|                test_memory_snapshot.cpp/.exe, test_persistence_layer.cpp/.exe
-|   ├── data_store: rollback_history.json, rollback_policy.json         
-|
-├── scripts/                         # Dùng chạy demo và mô phỏng
-│   ├── run_adaptive_core.cpp
-│   ├── demo_sensing.cpp
-│   ├── demo_preprocessing.cpp
-│   ├── demo_protection.cpp
-│   ├── test_communication.cpp
-│   └── simulate_packet_input.cpp    # (NEW)
-
-├── data/                            # Dữ liệu mẫu
-│   ├── raw/
-│   └── processed/
-
-├── tests/                           # Unit test độc lập
-│   ├── test_adaptation.cpp/.exe
-│   ├── test_feature_extraction.cpp/.exe
-│   ├── test_intrusion_detector.cpp
-│   └── test_plugin_loader.cpp
-|   ├── test_rollback_eval.cpp/.exe     
-|   ├── test_sync.cpp/.exe
-|   ├── test_protection.cpp
-|   ├── test_preprocessing.cpp
-|   ├── test_intrusion_detector.cpp
-    ├── test_intergration_server.cpp
-    ├── test_server.cpp
-    ├── test_sim_plugin.cpp                              
-├── docs/                            # Tài liệu, biểu đồ, mô tả kiến trúc
-│   ├── architecture_diagram.png
-│   ├── adaptive_ai_design.md
-│   ├── philosophy_and_threat_model.md
-│   └── roadmap_2025_2026.pdf
-
-└── CMakeLists.txt                   # Build cấu trúc toàn bộ hệ thống
-
-```
-
-# Run 
+## Run 
 ``` bash 
 g++ - o <filename>.cpp <filename>
 ```
+--- 
+
+## ✨ Key Features (March 2026)
+
++ Introspective Behavioral Compiler – A system that self-reflects and adjusts behavior from the kernel.
+
++ Self-Defense & Threat Analysis – Real-time anomaly detection and response.
+
++ Multi-language Plugin System – Supports Lua (dynamic logic) and Rust (high performance).
+
++ Memory Introspection & Rollback – Safe memory management and state recovery.
+
++ Secure Communication Layer – Secure connection with Ethical AI components.
+
++ Sandbox Execution – Isolated environment for plugins and testing.
+
+--- 
+
+## 🧠 Philosophy
+
+> AdaptiveAI is not designed to be the “strongest” or the “fastest.”
+
+It is designed to be safe from the ground up, to evolve in a controlled manner, and to always put humans at the center.
+
+We believe that:
+
+> A truly powerful intelligent system is not one that never makes mistakes, but one that knows when it is making mistakes and has the ability to correct itself.
+
+---
+
+## 📜 License
+Distributed under the GNU License — see **LICENSE** for details.
+
+---
+
+## 📬 Contributing
+AdaptiveAI is part of the Adaptive Intelligence Circle — an open-source, non-profit organization.
+
+We welcome genuine contributions from those who believe in:
+
+Kernel-based Ethical AI
+Distributed and autonomous systems
+Intellectual freedom and long-term accountability
+
+No extensive experience required. Just a shared vision.
+
+→ See how to contribute: CONTRIBUTING.md (more details to follow)
+
+---
+
 # Block Badges
 <p align="center">
-  <!-- License -->
-  <a href="https://opensource.org/licenses/Apache-2.0">
-    <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License" />
-  </a>
   <!-- Build -->
   <a href="https://github.com/YOUR_USERNAME/YOUR_REPO/actions">
     <img src="https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/cmake.yml?branch=main" alt="Build Status" />
@@ -194,3 +130,8 @@ g++ - o <filename>.cpp <filename>
   </a>
 </p>
 
+--- 
+
+> Made with conviction — Not for profit, but for meaning.
+
+**Adaptive Intelligence Circle** — 3/2026
