@@ -12,6 +12,9 @@
 
 #include "../utils/logger.h"
 
+#include "../modules/communications/secure_channel.cpp"
+#include "../modules/communications/secure_channel.h"
+
 using namespace std; 
 using namespace adaptive_ai;
 using namespace communication; 

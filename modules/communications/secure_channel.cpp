@@ -18,6 +18,11 @@ namespace communication
 
     }
 
+    SecureChannel :: SecureChannel()
+    {
+        Logger ::info("====Secure Channel====");
+    }
+
     SecureChannel :: ~SecureChannel(){
         Logger ::info(""); 
     }
