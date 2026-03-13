@@ -21,6 +21,9 @@ namespace communication
 
         bool send_secure(const string &data);
 
+        SecureChannel() = default; 
+        ~SecureChannel(); 
+
         public: 
         string server_address_; 
         int port_; 

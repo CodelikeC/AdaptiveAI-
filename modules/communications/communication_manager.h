@@ -9,7 +9,7 @@ namespace communication
         public: 
         CommunicationManager(const string &address, int port);
         CommunicationManager(); 
-        ~CommunicationManager() = default; 
+        ~CommunicationManager(); 
         
         bool initialize(); // Thiet lap rpc va secure channel
         string transmit(const string &request); 

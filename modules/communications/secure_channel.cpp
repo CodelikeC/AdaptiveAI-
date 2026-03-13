@@ -18,6 +18,10 @@ namespace communication
 
     }
 
+    SecureChannel :: ~SecureChannel(){
+        Logger ::info(""); 
+    }
+
     bool SecureChannel :: establish_connection()
     {
         lock_guard<mutex> lock(connection_mutex_); 
