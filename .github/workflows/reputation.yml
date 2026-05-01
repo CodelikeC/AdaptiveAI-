@@ -1,0 +1,51 @@
+name: Update Contributor Reputation
+
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  update-reputation:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # Add any extra dependencies if needed
+
+      - name: Run Reputation Script
+        run: |
+          AUTHOR=${{ github.event.pull_request.user.login }}
+          echo "Calculating reputation for $AUTHOR..."
+          python .github/scripts/reputation_score.py "$AUTHOR" > reputation_output.txt
+
+      - name: Update CONTRIBUTORS.md
+        run: |
+          AUTHOR=${{ github.event.pull_request.user.login }}
+          BADGE=$(grep "Assigned Badge:" reputation_output.txt | cut -d':' -f2- | xargs)
+          POINTS=$(grep "Total Points:" reputation_output.txt | cut -d':' -f2- | xargs)
+
+          # If contributor not listed, add new row
+          if ! grep -q "@$AUTHOR" CONTRIBUTORS.md; then
+            echo "| @$AUTHOR | $BADGE | $POINTS | Auto-assigned via workflow |" >> CONTRIBUTORS.md
+          else
+            # Update existing row (replace badge and points)
+            sed -i "/@$AUTHOR/s/| .* | .* |/| $BADGE | $POINTS |/" CONTRIBUTORS.md
+          fi
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'AIC-Bot'
+          git config --global user.email 'bot@aic.org'
+          git add CONTRIBUTORS.md
+          git commit -m "Update reputation for $AUTHOR"
+          git push
