@@ -1,0 +1,33 @@
+name: Mirror to Codeberg & GitLab
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:   # Cho phép chạy thủ công
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # Lấy toàn bộ lịch sử commit
+
+      - name: Mirror to Codeberg
+        run: |
+          git config --global user.name "GitHub Mirror Bot"
+          git config --global user.email "bot@adaptiveintelligencecircle.org"
+          
+          git remote add codeberg https://$CODEBERG_TOKEN@codeberg.org/${{ secrets.CODEBERG_REPO }}.git
+          git push --mirror codeberg
+        env:
+          CODEBERG_TOKEN: ${{ secrets.CODEBERG_TOKEN }}
+
+      - name: Mirror to GitLab
+        run: |
+          git remote add gitlab https://$GITLAB_TOKEN@gitlab.com/${{ secrets.GITLAB_REPO }}.git
+          git push --mirror gitlab
+        env:
+          GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
