@@ -2,20 +2,18 @@ name: AIC Fork Monitor
 
 on:
   schedule:
-    - cron: '0 4 * * 1'     # Chạy thứ 2 lúc 4h sáng (UTC)
+    - cron: '0 4 * * 1'      # Chạy thứ 2 lúc 4h sáng UTC
   workflow_dispatch:
 
 jobs:
   monitor:
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write        # Cho phép commit log
-      issues: read
-
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -27,17 +25,18 @@ jobs:
 
       - name: Run Fork Monitor
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   # Dùng token mặc định
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          ls -la scripts/                  # Debug: kiểm tra có file không
           python scripts/monitor-forks.py
 
       - name: Generate Report
         run: python scripts/generate-report.py
 
-      - name: Commit updated logs
+      - name: Commit changes if any
         run: |
-          git config user.name "AIC Fork Monitor Bot"
+          git config user.name "AIC Fork Bot"
           git config user.email "bot@adaptiveintelligencecircle.org"
           git add fork-log.csv logs/ COMPLIANCE-VIOLATIONS.md
-          git commit -m "chore: update fork monitoring data [automated]" || echo "No changes"
+          git commit -m "chore: update fork monitor data [automated]" || echo "No changes to commit"
           git push
